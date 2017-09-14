@@ -1,0 +1,16 @@
+@import '../base/reset.scss';
+@import '../base/_fonts.scss';
+
+.caption{
+  position: absolute;
+  left: 20%;
+  top: 0;
+  padding-bottom: 200px;
+  overflow-y: auto;
+  .articalBox{
+    .artical{
+      margin-left: 10%;
+      border: 1px solid #dedede;
+    }
+  }
+}

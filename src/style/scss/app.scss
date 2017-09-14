@@ -1,0 +1,20 @@
+@import '../base/reset.scss';
+
+.nav{
+  border: 1px solid $line;
+  >ul{
+    >li{
+      border-top: 1px solid $line;
+      border-bottom: 0;
+      &:nth-last-of-type(1){
+        border-bottom:1px solid $line; 
+      }
+      &:hover{
+        >a{
+          color: $sky;
+          @include transition(all 0.2s ease-in-out);
+        }
+      }
+    }
+  }
+}
