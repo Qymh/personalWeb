@@ -1,0 +1,9 @@
+@import '../base/_fonts.scss';
+
+.article{
+  position: absolute;
+  left: 20%;
+  top: 0;
+  padding-bottom: 200px;
+  overflow-y: auto;
+}

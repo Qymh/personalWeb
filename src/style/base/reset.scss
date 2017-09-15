@@ -10,22 +10,6 @@ a{
 	}
 }
 
-html{
-	height: 100%;
-	width: 100%;
-}
-  
-body{
-	height: 100%;
-	width: 100%;
-	overflow: hidden;
-}
-  
-#app{
-	height: 100%;
-	width: 100%;
-}
-
 @mixin box-shadow($shadow) {
     -webkit-box-shadow: $shadow;
     -moz-box-shadow: $shadow;

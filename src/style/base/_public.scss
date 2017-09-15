@@ -58,14 +58,6 @@
     line-height: $i * 5px;
   }
 
-  //border-radius
-  .br#{$i * 1}{
-    border-radius:$i px;
-    -moz-border-radius:$i px;
-    -webkit-border-radius:$i px;
-    -o-border-radius:$i px;
-    -ms-border-radius:$i px;
-  }
 }
 
 // 20次循环
@@ -73,6 +65,15 @@
   // 字体
   .font#{10 + $i}{
     font-size: $i + 10px;
+  }
+
+  //border-radius
+  .br#{$i * 1}{
+    border-radius:$i *1px;
+    -moz-border-radius:$i *1px;
+    -webkit-border-radius:$i *1px;
+    -o-border-radius:$i *1px;
+    -ms-border-radius:$i *1px;
   }
 }
 
@@ -187,4 +188,13 @@
   font-weight: bold;
 }
 
+// vertical-align
+
+.vc{
+  vertical-align:middle !important;
+}
+
+.vb{
+  vertical-align: bottom !important;
+}
 

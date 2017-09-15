@@ -8,9 +8,27 @@
   padding-bottom: 200px;
   overflow-y: auto;
   .articalBox{
+    .main{
+      >a{
+        &:hover{
+          color: $sky;
+          @include transition(all 0.2s ease-in-out);
+        }
+      }
+    }
     .artical{
-      margin-left: 10%;
-      border: 1px solid #dedede;
+      margin-left: 8%;
+      border: 1px solid $sky;
+      .details{
+        .category{
+          >a{
+            &:hover{
+              color: $sky;
+              @include transition(all 0.2s ease-in-out);
+            }
+          }
+        }
+      }
     }
   }
 }
