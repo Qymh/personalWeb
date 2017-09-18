@@ -1,9 +1,10 @@
 @import '../base/_fonts.scss';
+@import '../public/highlight.scss';
 
 .article{
   position: absolute;
   left: 20%;
   top: 0;
-  padding-bottom: 200px;
+  padding-bottom: 400px;
   overflow-y: auto;
 }

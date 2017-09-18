@@ -1,6 +1,9 @@
 @import '../base/reset.scss';
 
 .nav{
+  position: fixed;
+  left: 0;
+  top: 0;
   border: 1px solid $line;
   >ul{
     >li{
