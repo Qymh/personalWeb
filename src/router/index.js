@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../page/Home'
-import Article from '../page/Article.vue'
+import es6_let_const from '../page/javascript/Es6_let_const'
 
 Vue.use(Router)
 
@@ -13,8 +13,8 @@ export default new Router({
       component:Home
     },
     {
-      path:'/test',
-      component:Article
+      path:'/javascript/es6_let_const',
+      component:es6_let_const
     }
   ]
 })

@@ -3,7 +3,7 @@
     .articalBox.col10.mt50
       .artical.pt20.pb20.pl20.pr20.col7.h150.mb20.br20(v-for="artical in articals")
         .main.col6.row10.dib.fl.mt10
-          a.title.h40.lh40.fb.font30(href="#") {{artical.title}}
+          a.title.h40.lh40.fb.font30(:href="artical.href") {{artical.title}}
           .description.lh25.mt10.col8 {{artical.description}}
         .details.col.row10.dib.mt10.font14
           .time.mt5

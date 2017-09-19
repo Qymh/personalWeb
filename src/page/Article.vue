@@ -1,6 +1,6 @@
 <template lang="pug">
   .article.col8.row10
-    basename
+    basecaption
       span(slot="base") ES6学习笔记之Let和Const
       span(slot="detail") 小标题
     basetitle(title="Let")
@@ -14,11 +14,6 @@
         span ,
           main this
         span 的值指向不明确,并且在实际生产中容易
-    basetitle(title="测试标题?")
-    basetext
-      slot
-        span.
-          测试文字测试文字测试文字测试文字
     basecode
       slot
         code.html.
@@ -31,7 +26,7 @@
 import Highlight from '../components/public/Highlight'
 
 // 主标题组件
-import Basename from '../components/public/Basename'
+import Basecaption from '../components/public/Basecaption'
 
 // 标题组件
 import Basetitle from '../components/public/Basetitle'
@@ -49,7 +44,7 @@ export default {
   mounted() {
     Highlight.initHighlightingOnLoad()
   },
-  components: { Basename, Basetitle, Basetext, Basecode,Smalltitle}
+  components: { Basecaption, Basetitle, Basetext, Basecode,Smalltitle}
 }
 </script>
 

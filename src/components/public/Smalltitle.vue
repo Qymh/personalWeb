@@ -1,18 +1,33 @@
 <template lang="jade">
   .smalltitle.mt30.mb20.font20.fb
-    a.dib.col10(:href="'#'+this.title")(:id="this.title") {{title}}
+    i.icon-smalltitle.colorSky.font30.fb.mr10.vs
+    a.dib.col9.font20(:href="'#'+this.title+this.innerNum")(:id="this.title+this.innerNum") {{title}}
 </template>
 
 <script>
 export default {
-  props:['title']
+  props:['title'],
+  data () {
+    return {
+      innerNum:0  
+    }
+  },
+  created () {
+
+    var self=this
+
+    // 重复
+    function move(){
+      var a=Math.floor(Math.random()*100)
+      if(self.innerNum!=a){
+        self.innerNum=a
+      }else{
+        move()
+      }
+    }
+
+    move()
+  }
 }
 </script>
-
-<style lang="scss" scoped>
-  .smalltitle{
-    padding:0 9%;
-  }
-</style>
-
 
