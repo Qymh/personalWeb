@@ -4,7 +4,9 @@
 	left: 20%;
 	top: 0;
 	padding-bottom: 400px;
-	overflow-y: auto;
+	.limit{
+		overflow-y:auto; 
+	}
 }
 
 // 标题

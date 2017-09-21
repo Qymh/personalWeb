@@ -23,22 +23,22 @@
 <script>
 
 // 代码高亮
-import Highlight from '../components/public/Highlight'
+import Highlight from '../../components/public/Highlight'
 
 // 主标题组件
-import Basecaption from '../components/public/Basecaption'
+import Basecaption from '../../components/public/Basecaption'
 
 // 标题组件
-import Basetitle from '../components/public/Basetitle'
+import Basetitle from '../../components/public/Basetitle'
 
 // 小标题组件
-import Smalltitle from '../components/public/Smalltitle'
+import Smalltitle from '../../components/public/Smalltitle'
 
 // 描述组件
-import Basetext from '../components/public/Basetext'
+import Basetext from '../../components/public/Basetext'
 
 // 代码组件
-import Basecode from '../components/public/Basecode'
+import Basecode from '../../components/public/Basecode'
 
 export default {
   mounted() {
@@ -49,6 +49,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../style/scss/article.scss'
+@import '../../style/scss/article.scss'
 </style>
 
