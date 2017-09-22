@@ -1,22 +1,16 @@
 <template lang="pug">
   .article.col8.row10
-    basecaption
-      span(slot="base") ES6学习笔记之Let和Const
-      span(slot="detail") 小标题
-    basetitle(title="Let")
-    smalltitle(title="定义")
-    basetext
-      slot
-        span.
-          在JavaScript中不存在块级作用域,
-          当函数嵌套函数进行部署时,容易产生
-        a(href="#") 闭包
-        span ,
-          main this
-        span 的值指向不明确,并且在实际生产中容易
-    basecode
-      slot
-        code.html.
+    .limit.col10
+      basecaption
+        span(slot="base") ES6学习笔记之Let和Const
+        span(slot="detail") 小标题
+      basetitle(title="Let")
+      smalltitle(title="定义")
+      basetext
+        slot.
+          
+      basecode
+        slot.
           
 </template>
 
