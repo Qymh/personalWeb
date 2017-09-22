@@ -42,7 +42,33 @@ import Basecode from '../../components/public/Basecode'
 
 export default {
   mounted() {
+    // 高亮代码
     Highlight.initHighlightingOnLoad()
+
+    // 视口高度
+    const baseHeight=document.documentElement.clientHeight||
+    document.body.clientHeight
+
+    var $limit=document.getElementsByClassName('limit')[0]
+
+    $limit.style.height=baseHeight+'px'
+
+    // 改变重复的id值
+    var $ids=document.querySelectorAll('[id]')
+    var idArr=[]
+
+    $ids.forEach((id)=>{
+      idArr.push(id.id)
+    })
+
+    for(var i=0;i<idArr.length;i++){
+      for(var j=0;j<i;j++){
+        if(idArr[i]==idArr[j]){
+          $ids[i].id+=i
+          $ids[i].href+=i
+        }
+      }
+    }
   },
   components: { Basecaption, Basetitle, Basetext, Basecode,Smalltitle}
 }
