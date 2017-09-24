@@ -93,31 +93,35 @@
 // 颜色
 
 .colorSky{
-  color: $sky;
+  color: $sky !important;
+}
+
+.colorPink{
+  color: deeppink !important;
 }
 
 .colorBlack{
-  color: #000;
+  color: #000 !important;
 }
 
 .colorWhite{
-  color: #fff;
+  color: #fff !important;
 }
 
 .colorGreen{
-  color: $thinGreen;
+  color: $thinGreen !important;
 }
 
 .colorLine{
-  color:$line;
+  color:$line !important;
 }
 
 .colorGrey{
-  color:$lighterGrey;
+  color:$lighterGrey !important;
 }
 
 .colorText{
-  color:#8e959a;
+  color:#8e959a !important;
 }
 
 // 背景颜色
@@ -204,5 +208,21 @@
 
 .vs{
   vertical-align: sub !important;
+}
+
+// overflow
+
+.oa{
+  overflow: auto;
+}
+
+.oh{
+  overflow: hidden;
+}
+
+// text-overflow
+
+.te{
+  text-overflow:ellipsis;
 }
 

@@ -10,5 +10,3 @@ new Vue({
   template: '<App/>',
   components: { App }
 })
-
-console.log(router)

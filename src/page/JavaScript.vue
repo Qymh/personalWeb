@@ -49,14 +49,14 @@ export default {
   },
   created () {
     var self=this
-    this.$http.get('http://json.qymh.org.cn/api/personWeb_home/value').then(res=>{
+    this.$http.get('http://json.qymh.org.cn/api/personWeb_javascript/value').then(res=>{
       self.articals=res.data
     })
   },
   updated(){
     // 更改导航栏颜色
     let $a=document.querySelectorAll('.nav>ul>li>a')
-    $a[0].style.color="#35caef"
+    $a[2].style.color="#35caef"
   }
 }
 </script>
