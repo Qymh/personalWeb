@@ -2,7 +2,7 @@
   .article.col8.row10
     .limit.col10
       basecaption
-        span(slot="base") ES6学习笔记之解构赋值
+        span(slot="base") ES6读书笔记之解构赋值
         span(slot="detail") es6标准入门第二版
       basetitle(title="数组的赋值")
       smalltitle(title="赋值")

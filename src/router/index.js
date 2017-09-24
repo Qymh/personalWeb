@@ -23,7 +23,8 @@ export default new Router({
     {
       path:'/html5/interview',
       component:html5_interview
-    },{
+    },
+    {
       path:'/javascript/destructuring',
       component:es6_destructuring
     }
