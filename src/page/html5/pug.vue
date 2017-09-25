@@ -8,16 +8,16 @@
       basecode(type="xml")
         slot.
           p.top 123               
-          <p class= "top">123</p>
+          &ltp class= "top"&gt123&lt/p&gt
 
           p.top#special 123       
-          <p class= "top" id= "special">123</p>
+          &ltp class= "top" id= "special"&gt123&lt/p&gt
 
           a(href="/test") 123     
-          <a href= "/test">123</a>
+          &lta href= "/test"&gt123&lt/a&gt
 
           input(type= "text" placeholder= "请输入")
-          <input type= "text" placeholder= "请输入">
+          &ltinput type= "text" placeholder= "请输入"&gt
       
       smalltitle(title="在Vue中值得注意的属性定义")
       basecode(type="xml")
@@ -26,9 +26,9 @@
             input.top(:id="this.id" :placeholder="this.placeholder") // 第一种写法
             input.top(:id="this.id")(:placeholder="this.placeholder") //  第二种写法
 
-          <div class=".outer">
-            <input id= "test" placeholder= "测试输入">
-          </div>
+          &ltdiv class=".outer"&gt
+            &ltinput id= "test" placeholder= "测试输入"&gt
+          &lt/div&gt
       basecode
         slot.
           const demo = new Vue({
@@ -52,23 +52,23 @@
         slot.
           - var a = 'demo'
           p= a // 第一种写法
-          p #{a} // 第二种写法
-          <p> demo </p>
+          p \#{a} // 第二种写法
+          &ltp&gt demo &lt/p&gt
 
           - var items=[1,2,3]
           each item in items
             p= item
           
-          <p> 1 </p>
-          <p> 2 </p>
-          <p> 3 </p>
+          &ltp&gt 1 &lt/p&gt
+          &ltp&gt 2 &lt/p&gt
+          &ltp&gt 3 &lt/p&gt
 
           - var bool=true
           if(bool)
             p true
           else
             p false
-          <p> true </p>
+          &ltp&gt true &lt/p&gt
 
           - var choose='you'
             case choose
@@ -94,8 +94,9 @@
           p.
             123123123123123123123123123123123123
             123
-        
-          <p>123123123123123123123123123123123123123</p>
+
+          - 转义后的值
+          &ltp&gt123123123123123123123123123123123123123&lt/p&gt
           
           // 第一种写法
           p.
@@ -105,13 +106,14 @@
           p.
             123123<main>123</main>123
           
-          <p>123123<main>123</main>123</p>
+          - 转义后的值
+          &ltp&gt123123<main>123</main>123&lt/p&gt
       basetitle(title="进阶")
       smalltitle(title="include")
       basetext
         slot.
-          include用于引用其他的pug模版到当前pug中,像可复用的link,script链接
-          以及页面相同的头部或者尾部元素都可以引用达到复用的目的
+          include用于引用其他的pug模版到当前pug中<br>
+          像可复用的link,script链接以及页面相同的头部或者尾部元素都可以引用达到复用的目的
       basecode(type="xml")
         slot.
           -- head.pug
@@ -119,19 +121,19 @@
           link(rel="stylesheet", href="style.css")
 
           -- test.pug
-          <!DOCTYPE html>
+          &lt!DOCTYPE html&gt
           html
             head
               include head.pug
 
           // 输出结果
-          <!DOCTYPE html>
-          <html> 
-            <head> 
-              <title>测试</title>
-              <link rel="stylesheet" href="style.css">
-            </head> 
-          </html>
+          &lt!DOCTYPE html&gt
+          &lthtml&gt 
+            &lthead&gt 
+              &lttitle&gt测试&lt/title&gt
+              &ltlink rel="stylesheet" href="style.css"&gt
+            &lt/head&gt 
+          &lt/html&gt
       smalltitle(title="block")
       basetext
         slot.
@@ -144,7 +146,7 @@
       basecode(type="xml")
         slot.
           --layout.pug
-          <!DOCTYPE html>
+          &lt!DOCTYPE html&gt
           html
             head
               block script
@@ -155,14 +157,28 @@
         
           --child.pug
 
-          extends layout.pug
+          extends layout.pug // 结尾不要加分号 不然会报错
 
-          <!DOCTYPE html>
-          html
-            head
-            body
-              p 123
-          
+          block content
+            p 改变的值
+
+          --child.pug输出结果
+
+          &lthtml&gt
+            &lthead&gt
+              &ltscript&gt&lt/script&gt
+            &lt/head&gt
+            &ltbody&gt
+              &ltp&gt改变的值&lt/p&gt
+            &lt/body&gt
+          &lt/html&gt
+      basetext
+        slot.
+          用<main>extends</main>引用模版,<main>block</main>进行选择性的更改<br>
+          需要更改时在对应处加上block和该位置对应的名称即可修改<br>
+          经过比较,一般情况下,复用程度较统一,即只需要改变部分内容的情况下用block比较好<br>
+          而当需要改变的内容过多时,可以用include进行局部引用相同模版
+      .h100
 </template>
 
 <script>

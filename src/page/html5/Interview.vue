@@ -26,6 +26,29 @@
           在ie盒子中如果定义元素的高宽值 则等于定义了 borderbox的高宽<br>
           在w3c盒子中如何定义元素的高宽值 则仅仅定义了 contentbox的高宽<br>
           为了避免盒子的影响,在项目中可使用<main>box-sizing:border-box</main>消除影响
+      smalltitle(title="描述一下Doctype")
+      basetext
+        slot.
+          <main>&lt!Doctype html&gt</main>放在html的顶部,向浏览器表达了以什么样的<main>文档规范</main>
+          进行解析<br>
+          当Doctype表达不规范及出错时,浏览器会以兼容模式向后兼容,用老的浏览器方式对文档进行解析<br>
+          当其正确时,浏览器会以严格模式及浏览器的最高标准对文档进行解析<br>
+          区分是否为html5的一大判断标准就是看Doctype的表达规范与否
+      smalltitle(title="描述一下iframe")
+      basetext
+        slot.
+          <main>iframe</main>为引用外部链接窗口,一般用来引用广告之类的<br>
+          <main>优点</main><br>
+          提供了访问其他网站最便利的接口<br>
+          引用其他静态网站方便<br>
+          <main>缺点</main><br>
+          增加了css js 的http访问请求次数<br>
+          整个页面加载完毕是算上iframe加载完毕,访问iframe如果过大而且站点网速传输又慢的情况下,会造成堵塞<br>
+          页面层次混乱,没有操作好滚动条的显示与否会让用户体验差<br>
+          浏览器的向下兼容问题,在老式浏览器下,一个页面对iframe的引用次数有限<br>
+        
+          <main>另一个frameset</main><br>
+          frameset必须放在body之中,他是frame的父元素
 </template>
 
 <script>
