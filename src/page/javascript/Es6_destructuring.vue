@@ -103,7 +103,7 @@ import Basecode from '../../components/public/Basecode'
 export default {
   mounted() {
     // 高亮代码
-    Highlight.initHighlightingOnLoad()
+    Highlight.initHighlighting()
 
     // 视口高度
     const baseHeight = document.documentElement.clientHeight ||

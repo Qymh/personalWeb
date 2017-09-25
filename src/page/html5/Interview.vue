@@ -5,7 +5,7 @@
         span(slot="base") HTML5面试题
       basetitle(title="基础")
       smalltitle(title="什么是行内元素,什么是块级元素?不同的话有什么影响?")
-      basetext.s
+      basetext
         slot.
           浏览器默认样式为#[main display:inline]的元素为行内元素<br>
           浏览器默认样式为#[main display:block]的元素为块级元素<br>
@@ -13,13 +13,13 @@
           如果要使默认行内元素如#[main a]#[main span]等变为块级元素又不影响其余布局,可使用
           #[main display:inline-block]
       smalltitle(title="@import的link有什么区别?")
-      basetext.s
+      basetext
         slot.
           @import主要用于css文件中的引用,link主要用于页面中引用css<br>
           link引用会同时加载,而@import会在所有css引用完毕后再进行加载<br>
           link的权重大于@import<br>
       smalltitle(title="描述一下盒子模型")
-      basetext.s
+      basetext
         slot.
           盒子模型分两种,一种ie,一种w3c<br>
           两种盒子模型拥有的元素是一样的从外到里分别为<main>margin border padding content</main><br>
@@ -51,7 +51,7 @@ import Basecode from '../../components/public/Basecode'
 export default {
   mounted() {
     // 高亮代码
-    Highlight.initHighlightingOnLoad()
+    Highlight.initHighlighting()
 
     // 视口高度
     const baseHeight=document.documentElement.clientHeight||
@@ -84,10 +84,5 @@ export default {
 
 <style lang="scss">
 @import '../../style/scss/article.scss';
-
-.s{
-  margin-left:2%;
-  font-size: 16px !important;
-}
 </style>
 
