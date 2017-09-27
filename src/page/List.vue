@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   .col8.caption.row10
     .articalBox.col10.mt50
       .artical.pt20.pb20.pl20.pr20.col7.h150.mb20.br20(v-for="artical in articals")
@@ -7,26 +7,30 @@
           .description.lh25.mt10.col8.colorText(
             style="max-height:75px;overflow:hidden;"
             )
-            {{artical.description|limitWord}}
+            |{{artical.description|limitWord}}
         .details.col.row10.dib.mt10.font14
           .time.mt5
             span
               i.icon-time.colorSky.font30.vc
               span.dib.w50.tc 上传
             span.ml10
-              {{artical.time}}
+              |{{artical.time}}
           .update.mt15
             span
               i.icon-update.colorSky.font30.vc
-              span.dib.w50.tc 更新
-            span.ml10
-              {{artical.update}}
+              span.dib.w50.tc(
+                :class="artical.time==artical.update?'':'colorSky'"
+              ) 更新
+            span.ml10(
+              :class="artical.time==artical.update?'':'colorSky'"
+            )
+              |{{artical.update}}
           .category.mt15
             span
               i.icon-category.colorSky.font30.vc
               span.dib.w50.tc 分类
             a.ml10(:href="artical.categoryHref")
-              {{artical.category}}
+              |{{artical.category}}
 </template>
 
 <script>
@@ -48,15 +52,47 @@ export default {
     }
   },
   created () {
-    var self=this
-    this.$http.get('http://json.qymh.org.cn/api/personWeb_html5/value').then(res=>{
+    let self=this
+    // 动态获取数据
+    let path=window.location.pathname.trim().toString()
+    if(path=='/'){
+      path='_home'
+    }else{
+      path=path.replace('/','_')
+    }
+
+    this.$http.get(`http://json.qymh.org.cn/api/personWeb${path}/value`).then(res=>{
       self.articals=res.data
     })
   },
   updated(){
     // 更改导航栏颜色
     let $a=document.querySelectorAll('.nav>ul>li>a')
-    $a[1].style.color="#35caef"
+
+    let index=0
+
+    let path=window.location.pathname.trim().toString()
+
+    switch (path) {
+      case '/':
+        index=0
+        break;
+      case '/html5':
+        index=1
+        break;
+      case '/javascript':
+        index=2
+        break;
+      case '/vue':
+        index=3
+        break;
+      default:
+        index=0
+        break;
+    }
+
+    $a[index].style.color="deepskyblue"
+    
   }
 }
 </script>

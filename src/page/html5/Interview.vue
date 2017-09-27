@@ -49,6 +49,52 @@
         
           <main>另一个frameset</main><br>
           frameset必须放在body之中,他是frame的父元素
+      smalltitle(title="请说明Html5新增的功能")
+      basetext
+        slot.
+          1.<br>
+            新增语义化的元素 如 <main>nav article section header footer q </main>等<br>
+            语义化的元素在读代码时会更清晰<br>
+          2.<br>
+            新增了一些表单控件 如<main>range week color date email number</main>等<br>
+            表单空间增加了表单的丰富程度,可以解决更多的需求<br>
+          3.<br>
+            新增视频音频插件 <main>vedio audio</main><br>
+            他们的属性 <main>src(地址) controls(控制) muted(静音) loop(滚动) preload(预加载) autoplay(自动播放) </main><br>
+            视频专属 <main>poster(预加载图片)</main><br>
+            他们的子元素 <main>source</main> source的属性 <main>src type(类型)</main><br>
+            type类型如 <main>audio/ogg audio/mpeg video/mp4</main><br>
+          4.<br>
+            新增<main>canvas</main>用于画布作图<br>
+            const ctx=document.getElementById('canvas').getContent('2d')<br>
+          5.<br>
+            新增离线缓存<br>
+            (1) web缓存<br>
+              localStorage.name='123' // 这个缓存值在浏览器重启后仍然生效<br>
+              sessionStorage.name='123' // 这个缓存值在浏览器重启后失效<br>
+            (2) 应用程序缓存<br>
+              <main>&lthtml manifest="web.appcache"&gt&lt/html&gt</main><br>
+              在html标签中引用 manifest 属性 其文件格式必须为<main>.appcache</main><br>
+              文件中的内容分为三部分<br>
+              
+              // 会离线储存的文件 一般为全局 css js<br>
+              <main>
+              #CACHEMANIFEST<br>
+              /.main.css<br>
+              /.main.js<br>
+              </main><br>
+
+              // 不会离线缓存的文件<br>
+              <main>
+              #NETWORK<br>
+              /.demo.php <br>
+              </main><br>
+
+              // 页面失效时的处理<br>
+              #FALLBACK<br>
+              <main>
+              /html/ /404.html <br>
+              </main><br>
 </template>
 
 <script>

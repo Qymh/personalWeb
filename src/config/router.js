@@ -1,21 +1,19 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// 主页
-import Home from '../page/Home'
+// 列表模版
+import list from '../page/List'
 
-// js主页
-import javascript from '../page/JavaScript'
-
-// html5主页
-import Html5 from '../page/Html5'
+// html5
+import html5_interview from '../page/html5/Interview' // html5面试
+import html5_pug from '../page/html5/pug' // pug
 
 // js
 import es6_let_const from '../page/javascript/Es6_let_const' // let&const
 import es6_destructuring from '../page/javascript/Es6_destructuring' // 解构赋值
 
-// html5
-import html5_interview from '../page/html5/Interview' // html5面试
-import html5_pug from '../page/html5/pug' // pug
+// vue
+import vuex from '../page/vue/vuex' // vuex
+
 
 Vue.use(Router)
 
@@ -24,12 +22,12 @@ export default new Router({
   routes:[
     {
       path:'/',
-      component:Home
+      component:list
     },
     // html5
     {
       path:'/html5',
-      component:Html5
+      component:list
     },
     {
       path:'/html5/interview',
@@ -42,7 +40,7 @@ export default new Router({
     // js
     {
       path:'/javascript',
-      component:javascript
+      component:list
     },
     {
       path:'/javascript/let_const',
@@ -51,6 +49,15 @@ export default new Router({
     {
       path:'/javascript/destructuring',
       component:es6_destructuring
+    },
+    // vue
+    {
+      path:'/vue',
+      component:list
+    },
+    {
+      path:'/vue/vuex',
+      component:vuex
     }
   ]
 })
