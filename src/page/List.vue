@@ -1,14 +1,12 @@
 <template lang="pug">
-  .col8.caption.row10
-    .articalBox.col10.mt50
-      .artical.pt20.pb20.pl20.pr20.col7.h150.mb20.br20(v-for="artical in articals")
-        .main.col6.row10.dib.fl.mt10
+  .col80.caption.row100
+    .articalBox.col100
+      .artical.pt20.pb20.pl20.pr20.col75.h195.mb20.br20(v-for="artical in articals")
+        .main.col60.row100.dib.fl.mt10
           a.title.h40.lh40.fb.font30(:href="artical.href") {{artical.title}}
-          .description.lh25.mt10.col8.colorText(
-            style="max-height:75px;overflow:hidden;"
-            )
+          .description.lh25.mt10.col80.colorText
             |{{artical.description|limitWord}}
-        .details.col.row10.dib.mt10.font14
+        .details.col40.row100.dib.mt10.font14
           .time.mt5
             span
               i.icon-time.colorSky.font30.vc
@@ -28,7 +26,7 @@
           .category.mt15
             span
               i.icon-category.colorSky.font30.vc
-              span.dib.w50.tc 分类
+              span.dib.w50.tc
             a.ml10(:href="artical.categoryHref")
               |{{artical.category}}
 </template>

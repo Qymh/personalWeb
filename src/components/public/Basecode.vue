@@ -18,7 +18,6 @@ export default {
 
       $xml[i].innerHTML=innerHtml
 
-      console.log(innerHtml)
     }
   }
 }

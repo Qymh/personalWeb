@@ -1,6 +1,6 @@
 <template lang="pug">
-  .article.col8.row10
-    .limit.col10
+  .article.col80.row100
+    .limit.col100
       basecaption
         span(slot="base") ES6读书笔记之解构赋值
         span(slot="detail") es6标准入门第二版

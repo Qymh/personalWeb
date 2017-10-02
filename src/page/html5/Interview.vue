@@ -1,6 +1,6 @@
 <template lang="pug">
-  .article.col8.row10
-    .limit.col10
+  .article.col80.row100
+    .limit.col100
       basecaption
         span(slot="base") HTML5面试题
       basetitle(title="基础")

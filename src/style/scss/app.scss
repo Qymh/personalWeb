@@ -1,21 +1,63 @@
 @import '../base/reset.scss';
 
-.nav{
-  position: fixed;
-  left: 0;
-  top: 0;
-  border: 1px solid $line;
-  >ul{
-    >li{
-      border-top: 1px solid $line;
-      border-bottom: 0;
-      &:nth-last-of-type(1){
-        border-bottom:1px solid $line; 
+// 移动端css
+@media (max-width:1000px){
+  .navMobile{
+    display: block;
+    >i{
+      font-size: 1rem;
+    }
+  }
+  .nav{
+    display: none;
+    width: 80%;
+    background-color: #fff;
+    z-index: 9999;
+    position: relative;
+    height: auto;
+    padding-bottom: 0.3rem;
+    border: 1px solid $line;
+    >a{
+      font-size: 0.3rem;
+    }
+    >ul{
+      >li{
+        height: 1.5rem;
+        line-height: 1.5rem;
+        font-size: 0.3rem;
+        border-top: 1px solid $line;
+        border-bottom: 0;
+        &:nth-last-of-type(1){
+          border-bottom:1px solid $line; 
+        }
       }
-      &:hover{
-        >a{
-          color: $sky;
-          @include transition(all 0.2s ease-in-out);
+    }
+  }
+}
+
+// pc端css
+@media(min-width:1000px){
+  .navMobile{
+    display: none;
+  }
+  .nav{
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: block;
+    border: 1px solid $line;
+    >ul{
+      >li{
+        border-top: 1px solid $line;
+        border-bottom: 0;
+        &:nth-last-of-type(1){
+          border-bottom:1px solid $line; 
+        }
+        &:hover{
+          >a{
+            color: $sky;
+            @include transition(all 0.2s ease-in-out);
+          }
         }
       }
     }

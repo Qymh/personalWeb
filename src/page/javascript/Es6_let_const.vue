@@ -1,6 +1,6 @@
 <template lang="jade">
-  .article.col8
-    .limit.col10
+  .article.col80.row100
+    .limit.col100
       basecaption
         span(slot="base") ES6读书笔记之Let和Const
         span(slot="detail") es6标准入门第二版
