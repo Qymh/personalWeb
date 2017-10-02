@@ -1,7 +1,7 @@
 @import '../base/reset.scss';
 
 // 移动端css
-@media (max-width:1000px){
+@media screen and (max-width:1000px){
   .navMobile{
     display: block;
     >i{
@@ -10,7 +10,7 @@
   }
   .nav{
     display: none;
-    width: 80%;
+    width: 0;
     background-color: #fff;
     z-index: 9999;
     position: relative;
@@ -36,7 +36,7 @@
 }
 
 // pc端css
-@media(min-width:1000px){
+@media screen and (min-width:1000px){
   .navMobile{
     display: none;
   }

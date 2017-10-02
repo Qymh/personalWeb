@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   .basename.pt20.pl40.mb30
     .main
       i.icon-caption.colorSky.font25.vb

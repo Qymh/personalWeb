@@ -7,7 +7,7 @@ $baseFontSize: 75px !default;
 }
 
 // 移动端css
-@media (max-width:1000px){
+@media screen and (max-width:1000px){
 	.article {
 		position: absolute;
 		width: 100%;
@@ -50,7 +50,7 @@ $baseFontSize: 75px !default;
 	// 文字描述
 	.basetext {
 		margin-left: 2%;
-		font-size: p(35px);
+		font-size: 0.35rem;
 		line-height: p(55px);
 		padding: 0 9.5%;
 		a {
@@ -75,7 +75,7 @@ $baseFontSize: 75px !default;
 	.basecode {
 		padding: 0 9.5%;
 		>pre {
-			font-size: p(30px);
+			font-size: 0.35rem;
 			line-height: p(40px);
 			font-family: Microsoft YaHei;
 			white-space: pre;
@@ -89,7 +89,7 @@ $baseFontSize: 75px !default;
 }
 
 // pc端css
-@media(min-width:1000px){
+@media screen and (min-width:1000px){
 	.article {
 		position: absolute;
 		left: 20%;
