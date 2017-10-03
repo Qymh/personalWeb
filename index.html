@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="keywords" content="Qymh个人导航">
   <meta name="description" content="Qymh个人导航">
-  <link rel="shortcut icon" href="http://nav.qymh.org.cn/static/images/q.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="https://nav.qymh.org.cn/static/images/q.ico" type="image/x-icon" />
   <title>Qymh前端</title>
 </head>
 
@@ -19,6 +19,18 @@
       hm.src = "https://hm.baidu.com/hm.js?bce79e37f357d4592a07a7d66195b6ac";
       var s = document.getElementsByTagName("script")[0]; 
       s.parentNode.insertBefore(hm, s);
+    })();
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
     })();
   </script>
 

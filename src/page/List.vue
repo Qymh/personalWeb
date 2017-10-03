@@ -59,7 +59,7 @@ export default {
       path=path.replace('/','_')
     }
 
-    this.$http.get(`http://json.qymh.org.cn/api/personWeb${path}/value`).then(res=>{
+    this.$http.get(`https://json.qymh.org.cn/api/personWeb${path}/value`).then(res=>{
       self.articals=res.data
     })
   },
