@@ -1,6 +1,6 @@
 <template lang="jade">
-  .article.col80.row100
-    .limit.col100
+  .limit.col80.oa
+    .article.col100
       basecaption
         span(slot="base") ES6读书笔记之Let和Const
         span(slot="detail") es6标准入门第二版
@@ -144,9 +144,11 @@ export default {
     const baseHeight=document.documentElement.clientHeight||
     document.body.clientHeight
 
-    var $limit=document.getElementsByClassName('limit')[0]
+    var $limit=document.getElementsByClassName('article')[0]
+    var $nav=document.querySelectorAll('.navMobile')[0]
 
-    $limit.style.height=baseHeight+'px'
+    var navHeight=$nav.clientHeight
+    $limit.style.height=baseHeight-navHeight+'px'
 
     // 改变重复的id值
     var $ids=document.querySelectorAll('[id]')

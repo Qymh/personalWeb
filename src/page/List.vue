@@ -1,34 +1,34 @@
 <template lang="pug">
-  .col80.caption.row100
-    .articalBox.col100
-      .artical.pt20.pb20.pl20.pr20.col75.h195.mb20.br20(v-for="artical in articals")
+  .col80.caption
+    .articleBox.col100
+      .article.pt20.pb20.pl20.pr20.col75.h195.mb20.br20(v-for="article in articles")
         .main.col60.row100.dib.fl.mt10
-          a.title.h40.lh40.fb.font30(:href="artical.href") {{artical.title}}
+          a.title.h40.lh40.fb.font30(:href="article.href") {{article.title}}
           .description.lh25.mt10.col80.colorText
-            |{{artical.description|limitWord}}
+            |{{article.description|limitWord}}
         .details.col40.row100.dib.mt10.font14
           .time.mt5
             span
               i.icon-time.colorSky.font30.vc
               span.dib.w50.tc 上传
             span.ml10
-              |{{artical.time}}
+              |{{article.time}}
           .update.mt15
             span
               i.icon-update.colorSky.font30.vc
               span.dib.w50.tc(
-                :class="artical.time==artical.update?'':'colorSky'"
+                :class="article.time==article.update?'':'colorSky'"
               ) 更新
             span.ml10(
-              :class="artical.time==artical.update?'':'colorSky'"
+              :class="article.time==article.update?'':'colorSky'"
             )
-              |{{artical.update}}
+              |{{article.update}}
           .category.mt15
             span
               i.icon-category.colorSky.font30.vc
               span.dib.w50.tc
-            a.ml10(:href="artical.categoryHref")
-              |{{artical.category}}
+            a.ml10(:href="article.categoryHref")
+              |{{article.category}}
 </template>
 
 <script>
@@ -45,7 +45,7 @@ Vue.filter('limitWord',(value)=>{
 export default {
   data () {
     return {
-      articals:[
+      articles:[
       ]
     }
   },
@@ -60,10 +60,20 @@ export default {
     }
 
     this.$http.get(`https://json.qymh.org.cn/api/personWeb${path}/value`).then(res=>{
-      self.articals=res.data
+      self.articles=res.data
     })
   },
   updated(){
+    let $nav=document.querySelector('.navMobile')
+    let $caption=document.getElementsByClassName('caption')[0]
+
+    let baseHeight=document.documentElement.clientHeight||
+    document.body.clientHeight
+    let navHeight=$nav.clientHeight
+
+    $caption.style.height=baseHeight-navHeight+'px'
+    
+
     // 更改导航栏颜色
     let $a=document.querySelectorAll('.nav>ul>li>a')
 

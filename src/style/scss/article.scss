@@ -8,14 +8,13 @@ $baseFontSize: 75px !default;
 
 // 移动端css
 @media screen and (max-width:1000px){
+	.limit{
+		margin-top: p(100px);		
+	}
+
 	.article {
-		position: absolute;
 		width: 100%;
-		top: p(100px);
-		.limit{
-			overflow-y:auto; 
-			overflow-x: hidden;
-		}
+		left:0;
 	}
 
 	.basename{
@@ -74,6 +73,7 @@ $baseFontSize: 75px !default;
 	// 代码高亮
 	.basecode {
 		padding: 0 9.5%;
+		z-index: -100;
 		>pre {
 			font-size: 0.35rem;
 			line-height: p(40px);
@@ -81,6 +81,8 @@ $baseFontSize: 75px !default;
 			white-space: pre;
 			word-spacing: p(2px);
 			>code {
+				-webkit-overflow-scrolling:touch;
+				overflow:auto;
 				white-space: pre;
 				padding: 30px 40px;
 			}
@@ -90,11 +92,9 @@ $baseFontSize: 75px !default;
 
 // pc端css
 @media screen and (min-width:1000px){
-	.article {
-		position: absolute;
-		left: 20%;
-		top: 0;
-		.limit{
+	.limit {
+		margin-left: 20%;
+		.article{
 			overflow-y:auto; 
 		}
 	}

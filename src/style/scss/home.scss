@@ -15,11 +15,11 @@ $baseFontSize: 75px !default;
   .caption{
     position: absolute;
     width:100%;
+    left:0;
     top: p(100px);
-    padding-bottom: 200px;
     overflow-y: auto;
-    .articalBox{
-      .artical{
+    .articleBox{
+      .article{
         margin-left: 8%;
         width:84%;
         height:5.5rem;
@@ -93,12 +93,11 @@ $baseFontSize: 75px !default;
 // pc端css
 @media screen and (min-width:1000px){
   .caption{
-    position: absolute;
-    left: 20%;
-    top: 50px;
-    padding-bottom: 200px;
+    margin-left: 20%;
+    padding-top:50px;
     overflow-y: auto;
-    .articalBox{
+    padding-bottom: 200px;
+    .articleBox{
       .main{
         >a{
           &:hover{
@@ -111,7 +110,7 @@ $baseFontSize: 75px !default;
           overflow:hidden;
         }
       }
-      .artical{
+      .article{
         margin-left: 8%;
         border: 1px solid $sky;
         .details{

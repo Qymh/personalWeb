@@ -3,7 +3,10 @@
 // 移动端css
 @media screen and (max-width:1000px){
   .navMobile{
-    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
     >i{
       font-size: 1rem;
     }
