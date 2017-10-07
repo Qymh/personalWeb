@@ -1,5 +1,5 @@
 <template lang="jade">
-  .limit.col80.oa
+  .limit.oa
     .article.col100
       basecaption
         span(slot="base") ES6读书笔记之Let和Const

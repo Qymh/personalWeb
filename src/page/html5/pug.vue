@@ -1,5 +1,5 @@
 <template lang="pug">
-  .limit.col80.oa
+  .limit.oa
     .article.col100
       basecaption
         span(slot="base") Pug学习笔记
