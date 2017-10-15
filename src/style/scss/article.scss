@@ -10,7 +10,6 @@ $baseFontSize: 75px !default;
 @media screen and (max-width:1000px){
 	.limit{
 		width:100%;
-		margin-top: p(100px);		
 	}
 
 	.article {
@@ -74,7 +73,6 @@ $baseFontSize: 75px !default;
 	// 代码高亮
 	.basecode {
 		padding: 0 9.5%;
-		z-index: -100;
 		>pre {
 			font-size: 0.35rem;
 			line-height: p(40px);
@@ -82,8 +80,7 @@ $baseFontSize: 75px !default;
 			white-space: pre;
 			word-spacing: p(2px);
 			>code {
-				-webkit-overflow-scrolling:touch;
-				overflow:auto;
+				overflow:hidden;
 				white-space: pre;
 				padding: 30px 40px;
 			}

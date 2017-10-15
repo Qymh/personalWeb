@@ -35,8 +35,13 @@
 
           Webpack
 
-          --webpack中不用书写那么复杂的如this.$store.state.inner
-          --import {mapState} from 'vuex' 后 用...mapState 代替
+          webpack中不用书写那么复杂
+
+          如this.$store.state.inner
+
+          import {mapState} from 'vuex' 后
+          
+          用...mapState 代替
 
           computed: {
             ...mapState({
@@ -91,8 +96,13 @@
 
           Webpack
 
-          -- webpack中书写不用这么复杂如 this.$store.getters.addCounter
-          -- import {mapGetters} from 'vuex' 后 用...mapGetters代替
+          webpack中书写不用这么复杂
+
+          如this.$store.getters.addCounter
+
+          import {mapGetters} from 'vuex'后
+
+          用...mapGetters代替
 
           computed: {
             ...mapGetters({
@@ -165,8 +175,13 @@
 
           Webpack
 
-          -- webpack中书写不用这么复杂如 this.$store.commit('chooseSpecial')
-          -- import {mapMutations} from 'vuex' 后 用...mapMutations代替
+          webpack中书写不用这么复杂如
+
+          this.$store.commit('chooseSpecial')
+
+          import {mapMutations} from 'vuex'后
+
+          用...mapMutations代替
 
           methods:{
             ...mapMutations({
@@ -251,8 +266,13 @@
 
           Webpack
 
-          -- webpack中书写不用这么复杂如 this.$store.dispatch('AsyncChoose')
-          -- import {mapActions} from 'vuex' 后 用...mapActions代替
+          webpack中书写不用这么复杂
+
+          如this.$store.dispatch('AsyncChoose')
+          
+          import {mapActions} from 'vuex'后
+          
+          用...mapActions代替
 
           methods: {
             ...mapActions({
@@ -348,9 +368,15 @@
 
           Webpack
 
-          -- webpack中书写不用这么复杂如 this.$store.state.outer.inner
-          -- import {mapState} from 'vuex' 后 用...mapState代替
-          -- 如果是模块内的内容需要加上模块的名字
+          webpack中书写不用这么复杂如 
+          
+          this.$store.state.outer.inner
+
+          import {mapState} from 'vuex'后
+          
+          用...mapState代替
+          
+          如果是模块内的内容需要加上模块的名字
 
       basecode
         slot.
