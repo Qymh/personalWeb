@@ -96,7 +96,11 @@ $baseFontSize: 75px !default;
     margin-left: 20%;
     padding-top:50px;
     overflow-y: auto;
+    position: relative;
     padding-bottom: 200px;
+    ._v-container{
+      overflow: auto !important;
+    }
     .articleBox{
       .main{
         >a{
@@ -112,6 +116,7 @@ $baseFontSize: 75px !default;
       }
       .article{
         margin-left: 8%;
+        margin-top: 20px;
         border: 1px solid $sky;
         .details{
           .category{
@@ -127,6 +132,9 @@ $baseFontSize: 75px !default;
               }
             }
           }
+        }
+        &:nth-last-of-type(1){
+          margin-bottom: 100px;
         }
       }
     }

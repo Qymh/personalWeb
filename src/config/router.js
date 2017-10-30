@@ -14,7 +14,6 @@ import es6_destructuring from '../page/javascript/Es6_destructuring' // 解构�
 // vue
 import vuex from '../page/vue/vuex' // vuex
 
-
 Vue.use(Router)
 
 export default new Router({

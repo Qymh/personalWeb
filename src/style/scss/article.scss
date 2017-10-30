@@ -10,6 +10,7 @@ $baseFontSize: 75px !default;
 @media screen and (max-width:1000px){
 	.limit{
 		width:100%;
+		position: relative;
 	}
 
 	.article {
@@ -93,8 +94,12 @@ $baseFontSize: 75px !default;
 	.limit {
 		width:80%;
 		margin-left: 20%;
+		position: relative;
 		.article{
 			overflow-y:auto; 
+		}
+		._v-container{
+			overflow: auto !important;
 		}
 	}
 	

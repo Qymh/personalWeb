@@ -1,5 +1,5 @@
 <template lang="pug">
-  #app.font16(@touchend="hideNav")
+  #app.font16(@click="hideNav")
     .navMobile.z999.h100
       i.icon-nav.colorSky.point(@touchend.prevent.stop="nav" show="no")
     .nav.col20.dib.row100
@@ -19,6 +19,12 @@ import amfeFlexible from 'amfe-flexible';
 
 // 动画库
 import Velocity from 'velocity-animate'
+
+// 加载库
+import Vue from 'vue'
+import VueScroller from 'vue-scroller'
+
+Vue.use(VueScroller)
 
 export default {
   data () {

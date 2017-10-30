@@ -43,7 +43,7 @@ export default {
     const baseHeight=document.documentElement.clientHeight||
     document.body.clientHeight
 
-    var $limit=document.getElementsByClassName('article')[0]
+    var $limit=document.getElementsByClassName('limit')[0]
     var $nav=document.querySelectorAll('.navMobile')[0]
 
     var navHeight=$nav.clientHeight
