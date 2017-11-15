@@ -4,6 +4,10 @@
 @media screen and (max-width:1000px){
   .navMobile{
     width: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: #fff;
     >i{
       font-size: 1rem;
     }
@@ -13,7 +17,9 @@
     width: 0;
     background-color: #fff;
     z-index: 9999;
-    position: relative;
+    position: fixed;
+    left: 0;
+    top: 0;
     height: auto;
     padding-bottom: 0.3rem;
     border: 1px solid $line;

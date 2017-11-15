@@ -1,13 +1,13 @@
 <template lang="pug">
-  #app.font16(@click="hideNav")
-    .navMobile.z999.h100
-      i.icon-nav.colorSky.point(@touchend.prevent.stop="nav" show="no")
+  #app.font16(@touchend="hideNav($event)")
+    .navMobile.z999.h100(@touchend.prevent.stop="nav")
+      i.icon-nav.colorSky.point(show="no")
     .nav.col20.dib.row100
       a.dib.mt30.mb30.h50.lh50.tc.col100.colorSky.point(href="/")
         |Qymh
       ul
-        li.h50.col100(v-for="(nav,index) in navs")
-          a.dib.row100.col100.lh50.tc(:href="nav.href")
+        li.h50.col100.lh50(v-for="(nav,index) in navs")
+          a.dib.row100.col100.tc(:href="nav.href" sp="yes")
             |{{nav.name}}
     router-view
 </template>
@@ -70,7 +70,7 @@ export default {
       }
     },
     // 隐藏导航
-    hideNav(){
+    hideNav(e){
       let $nav=document.getElementsByClassName('nav')[0]
       let $i=document.querySelector('.navMobile i')
       let bool=$i.getAttribute('show')
@@ -85,6 +85,11 @@ export default {
         })
 
         $i.setAttribute('show','no')
+      }
+
+      let target=e.target
+      if(target.sp){
+        target.click()
       }
     }
   },

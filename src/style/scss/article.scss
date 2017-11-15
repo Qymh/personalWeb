@@ -9,6 +9,7 @@ $baseFontSize: 75px !default;
 // 移动端css
 @media screen and (max-width:1000px){
 	.limit{
+		padding-top: 1.3333rem;
 		width:100%;
 		position: relative;
 	}
@@ -50,7 +51,7 @@ $baseFontSize: 75px !default;
 	// 文字描述
 	.basetext {
 		margin-left: 2%;
-		font-size: 0.35rem;
+		font-size: 0.25rem;
 		line-height: p(55px);
 		padding: 0 9.5%;
 		a {
@@ -81,7 +82,7 @@ $baseFontSize: 75px !default;
 			white-space: pre;
 			word-spacing: p(2px);
 			>code {
-				overflow:hidden;
+				overflow-x: auto;
 				white-space: pre;
 				padding: 30px 40px;
 			}
@@ -143,9 +144,9 @@ $baseFontSize: 75px !default;
 	.basecode {
 		padding: 0 9.5%;
 		>pre {
-			font-size: 18px;
+			font-size: 17px;
 			line-height: 24px;
-			font-family: Microsoft YaHei;
+			font-family: "Consolas, 'Courier New', monospace";
 			white-space: pre;
 			word-spacing: 2px;
 			>code {

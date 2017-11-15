@@ -13,6 +13,7 @@ import es6_destructuring from '../page/javascript/Es6_destructuring' // 解构�
 
 // vue
 import vuex from '../page/vue/vuex' // vuex
+import veeValidate from '../page/vue/veeValidate' // vee-validate
 
 Vue.use(Router)
 
@@ -57,6 +58,14 @@ export default new Router({
     {
       path:'/vue/vuex',
       component:vuex
+    },
+    {
+      path:'/vue/veeValidate',
+      component:veeValidate
+    },
+    {
+      path:'/test',
+      component:veeValidate
     }
   ]
 })

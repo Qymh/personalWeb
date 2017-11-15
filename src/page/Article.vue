@@ -39,15 +39,15 @@ export default {
     // 高亮代码
     Highlight.initHighlighting()
 
-    // 视口高度
-    const baseHeight=document.documentElement.clientHeight||
-    document.body.clientHeight
+    // // 视口高度
+    // const baseHeight=document.documentElement.clientHeight||
+    // document.body.clientHeight
 
-    var $limit=document.getElementsByClassName('limit')[0]
-    var $nav=document.querySelectorAll('.navMobile')[0]
+    // var $limit=document.getElementsByClassName('limit')[0]
+    // var $nav=document.querySelectorAll('.navMobile')[0]
 
-    var navHeight=$nav.clientHeight
-    $limit.style.height=baseHeight-navHeight+'px'
+    // var navHeight=$nav.clientHeight
+    // $limit.style.height=baseHeight-navHeight+'px'
 
     // 改变重复的id值
     var $ids=document.querySelectorAll('[id]')
