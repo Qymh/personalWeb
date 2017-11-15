@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
   .limit.oa
     scroller
       .article.col100
