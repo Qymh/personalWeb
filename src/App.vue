@@ -20,12 +20,6 @@ import amfeFlexible from 'amfe-flexible';
 // 动画库
 import Velocity from 'velocity-animate'
 
-// 加载库
-import Vue from 'vue'
-import VueScroller from 'vue-scroller'
-
-Vue.use(VueScroller)
-
 export default {
   data () {
     return {
@@ -120,6 +114,6 @@ export default {
 </script>
 
 <style lang="scss">
-  @import './style/scss/app.scss';
+  @import './assets/style/scss/app.scss'
 </style>
 
