@@ -1,22 +1,23 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // 列表模版
-import list from '@/components/List'
+const list=()=>import('@/components/List')
 
 // html5
-import html5_interview from '@/components/html5/Interview' // html5面试
-import html5_pug from '@/components/html5/pug' // pug
+const html5_interview=()=>import('@/components/html5/Interview') // html5面试
+const html5_pug=()=>import('@/components/html5/pug') // pug
 
-// // js
-import es6_let_const from '@/components/javascript/Es6_let_const' // let&const
-import es6_destructuring from '@/components/javascript/Es6_destructuring' // 解构赋值
+// js
+const es6_let_const=()=>import('@/components/javascript/Es6_let_const') // let&const
+const es6_destructuring=()=>import('@/components/javascript/Es6_destructuring') // 解构赋值
+const es6_str_number=()=>import('@/components/javascript/Es6_str_number.vue') // 字符和数值
 
 // vue
-import vuex from '@/components/vue/vuex' // vuex
-import veeValidate from '@/components/vue/veeValidate' // vee-validate
+const vuex=()=>import('@/components/vue/vuex') // vuex
+const veeValidate=()=>import('@/components/vue/veeValidate') // vee-validate
 
 //framework
-import token from '@/components/framework/token' // 全栈token
+const token=()=>import('@/components/framework/token') // 全栈token
 
 Vue.use(Router)
 
@@ -52,6 +53,10 @@ export default new Router({
     {
       path:'/javascript/destructuring',
       component:es6_destructuring
+    },
+    {
+      path:'/javascript/str_number',
+      component:es6_str_number
     },
     // vue
     {

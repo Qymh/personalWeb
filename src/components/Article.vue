@@ -15,39 +15,28 @@
 </template>
 
 <script>
-
 // 代码高亮
-import Highlight from '../../components/public/Highlight'
+import Highlight from 'highlight.js'
 
 // 主标题组件
-import Basecaption from '../../components/public/Basecaption'
+import Basecaption from '../public/Basecaption'
 
 // 标题组件
-import Basetitle from '../../components/public/Basetitle'
+import Basetitle from '../public/Basetitle'
 
 // 小标题组件
-import Smalltitle from '../../components/public/Smalltitle'
+import Smalltitle from '../public/Smalltitle'
 
 // 描述组件
-import Basetext from '../../components/public/Basetext'
+import Basetext from '../public/Basetext'
 
 // 代码组件
-import Basecode from '../../components/public/Basecode'
+import Basecode from '../public/Basecode'
 
 export default {
   mounted() {
     // 高亮代码
     Highlight.initHighlighting()
-
-    // // 视口高度
-    // const baseHeight=document.documentElement.clientHeight||
-    // document.body.clientHeight
-
-    // var $limit=document.getElementsByClassName('limit')[0]
-    // var $nav=document.querySelectorAll('.navMobile')[0]
-
-    // var navHeight=$nav.clientHeight
-    // $limit.style.height=baseHeight-navHeight+'px'
 
     // 改变重复的id值
     var $ids=document.querySelectorAll('[id]')
@@ -66,7 +55,7 @@ export default {
       }
     }
   },
-  components: { Basecaption, Basetitle, Basetext, Basecode,Smalltitle}
+  components: { Basecaption, Basetitle, Basetext, Basecode, Smalltitle }
 }
 </script>
 

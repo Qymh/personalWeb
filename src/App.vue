@@ -28,7 +28,6 @@ export default {
         {name:'HTML5',href:'/html5'},
         {name:'JavaScript',href:'/javascript'},
         {name:'Vue',href:'/vue'},
-        {name:'小框架',href:'/plugins'},
         {name:'项目架构',href:'/framework'}
       ]
     }
@@ -68,6 +67,7 @@ export default {
       let $nav=document.getElementsByClassName('nav')[0]
       let $i=document.querySelector('.navMobile i')
       let bool=$i.getAttribute('show')
+      let target=e.target
 
       if(bool==='yes'){
         Velocity($nav,{
@@ -81,13 +81,12 @@ export default {
         $i.setAttribute('show','no')
       }
 
-      let target=e.target
       if(target.sp){
         target.click()
       }
     }
   },
-  created () {
+  mounted() {
     // 百度统计
     var _hmt = _hmt || [];
     (function() {
@@ -107,7 +106,6 @@ export default {
       }
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(bp, s);
-      console.log(window.router)
     })();
   }
 }
