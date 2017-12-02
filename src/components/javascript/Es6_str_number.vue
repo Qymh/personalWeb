@@ -1,11 +1,11 @@
 <template lang="pug">
   .limit.oa
     .article.col100
-      basecaption
+      base-caption
         span(slot="base") ES6学习笔记之字符和数值
         span(slot="detail") es6标准入门第二版
-      basetitle(title="字符")
-      basecode
+      base-title(title="字符")
+      base-code
         slot.
           let str='abc'
 
@@ -26,8 +26,8 @@
           str.padEnd()
 
           `abc${str}` // 连接字符和变量
-      basetitle(title="数值")
-      basecode
+      base-title(title="数值")
+      base-code
         slot.
           parseInt() parseFloat() // es5
           Number.parseInt() Number.parseFloat() // es6
@@ -43,28 +43,9 @@
 </template>
 
 <script>
-// 代码高亮
-import Highlight from 'highlight.js'
-
-// 主标题组件
-import Basecaption from '../public/Basecaption'
-
-// 标题组件
-import Basetitle from '../public/Basetitle'
-
-// 小标题组件
-import Smalltitle from '../public/Smalltitle'
-
-// 描述组件
-import Basetext from '../public/Basetext'
-
-// 代码组件
-import Basecode from '../public/Basecode'
 
 export default {
   mounted() {
-    // 高亮代码
-    Highlight.initHighlighting()
 
     // 改变重复的id值
     var $ids=document.querySelectorAll('[id]')
@@ -82,8 +63,7 @@ export default {
         }
       }
     }
-  },
-  components: { Basecaption, Basetitle, Basetext, Basecode, Smalltitle }
+  }
 }
 </script>
 

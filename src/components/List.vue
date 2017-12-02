@@ -33,14 +33,6 @@
 
 <script>
 
-import Vue from 'vue'
-import VueResource from 'vue-resource'
-Vue.use(VueResource)
-
-Vue.filter('limitWord',(value)=>{
-  return value.trim().substr(0,90)+'...'
-})
-
 export default {
   data () {
     return {
@@ -49,6 +41,9 @@ export default {
     }
   },
   created () {
+
+    $.loading()
+
     let self=this
     // 动态获取数据
     let path=window.location.pathname.trim().toString()
@@ -59,6 +54,7 @@ export default {
     }
 
     this.$http.get(`https://json.qymh.org.cn/api/personWeb${path}/value`).then(res=>{
+      $.removeLoading()
       self.articles=res.data
     })
   },

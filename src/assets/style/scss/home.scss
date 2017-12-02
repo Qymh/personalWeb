@@ -13,11 +13,10 @@ $baseFontSize: 75px !default;
 // 移动端css
 @media screen and (max-width:1000px){
   .caption{
-    position: absolute;
     width:100%;
-    left:0;
-    top: p(100px);
+    margin-top: p(100px);
     overflow-y: auto;
+    padding-bottom: 2rem;
     .articleBox{
       .article{
         margin-left: 8%;

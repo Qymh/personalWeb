@@ -1,42 +1,23 @@
 <template lang="pug">
   .limit.oa
     .article.col100
-      basecaption
+      base-caption
         span(slot="base") ES6学习笔记之Let和Const
         span(slot="detail") 小标题
-      basetitle(title="Let")
-      smalltitle(title="定义")
-      basetext
+      base-title(title="Let")
+      small-title(title="定义")
+      base-text
         slot.
           
-      basecode
+      base-code
         slot.
           
 </template>
 
 <script>
-// 代码高亮
-import Highlight from 'highlight.js'
-
-// 主标题组件
-import Basecaption from '../public/Basecaption'
-
-// 标题组件
-import Basetitle from '../public/Basetitle'
-
-// 小标题组件
-import Smalltitle from '../public/Smalltitle'
-
-// 描述组件
-import Basetext from '../public/Basetext'
-
-// 代码组件
-import Basecode from '../public/Basecode'
 
 export default {
   mounted() {
-    // 高亮代码
-    Highlight.initHighlighting()
 
     // 改变重复的id值
     var $ids=document.querySelectorAll('[id]')
@@ -54,8 +35,7 @@ export default {
         }
       }
     }
-  },
-  components: { Basecaption, Basetitle, Basetext, Basecode, Smalltitle }
+  }
 }
 </script>
 

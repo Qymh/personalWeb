@@ -3,6 +3,8 @@
 @import '_public.scss';
 // @import '_animated.scss';
 @import '_mixin.scss';
+@import '_alert.scss';
+
 a{
 	color: #000;
 	&:link,&:visited{
@@ -13,3 +15,4 @@ a{
 	-webkit-tap-highlight-color:transparent;
 	outline:none；
 }
+

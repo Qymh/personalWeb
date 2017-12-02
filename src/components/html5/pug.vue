@@ -1,11 +1,11 @@
 <template lang="pug">
   .limit.oa
     .article.col100
-      basecaption
+      base-caption
         span(slot="base") Pug学习笔记
-      basetitle(title="基础")
-      smalltitle(title="元素类名 id 属性值 定义")
-      basecode(type="xml")
+      base-title(title="基础")
+      small-title(title="元素类名 id 属性值 定义")
+      base-code(type="xml")
         slot.
           p.top 123               
           &ltp class= "top"&gt123&lt/p&gt
@@ -19,8 +19,8 @@
           input(type= "text" placeholder= "请输入")
           &ltinput type= "text" placeholder= "请输入"&gt
       
-      smalltitle(title="在Vue中值得注意的属性定义")
-      basecode(type="xml")
+      small-title(title="在Vue中值得注意的属性定义")
+      base-code(type="xml")
         slot.
           div.outer
             input.top(:id="this.id" :placeholder="this.placeholder") // 第一种写法
@@ -29,7 +29,7 @@
           &ltdiv class=".outer"&gt
             &ltinput id= "test" placeholder= "测试输入"&gt
           &lt/div&gt
-      basecode
+      base-code
         slot.
           const demo = new Vue({
             el: '.outer',
@@ -40,15 +40,15 @@
               }
             }
           })
-      basetext
+      base-text
         slot.
           在上述的代码中,第一种写法是会报错的,当通一个属性需要引用:进行赋值时,必须
           将其分为多个括号包围,不然pug语法会报错
-      smalltitle(title="pug中的js语法")
-      basetext
+      small-title(title="pug中的js语法")
+      base-text
         slot.
           pug中最常用的js方法 为 var 赋值,each in 循环,if判断 与 case 选择
-      basecode(type="xml")
+      base-code(type="xml")
         slot.
           - var a = 'demo'
           p= a // 第一种写法
@@ -78,12 +78,12 @@
                 p we
               default
                 p nobody
-      smalltitle(title="特殊情况的文本处理")
-      basetext
+      small-title(title="特殊情况的文本处理")
+      base-text
         slot.
           特殊情况比如文本过多无法在一排显示,可按如下的第一组方法两种方式实现<br>
           想在文本过多的情况下嵌套元素可使用下面的第二组方法两种方式实现
-      basecode(type="xml")
+      base-code(type="xml")
         slot.
           // 第一种写法
           p 123123123123
@@ -108,13 +108,13 @@
           
           - 转义后的值
           &ltp&gt123123<main>123</main>123&lt/p&gt
-      basetitle(title="进阶")
-      smalltitle(title="include")
-      basetext
+      base-title(title="进阶")
+      small-title(title="include")
+      base-text
         slot.
           include用于引用其他的pug模版到当前pug中<br>
           像可复用的link,script链接以及页面相同的头部或者尾部元素都可以引用达到复用的目的
-      basecode(type="xml")
+      base-code(type="xml")
         slot.
           -- head.pug
           title 测试
@@ -134,8 +134,8 @@
               &ltlink rel="stylesheet" href="style.css"&gt
             &lt/head&gt 
           &lt/html&gt
-      smalltitle(title="block")
-      basetext
+      small-title(title="block")
+      base-text
         slot.
           <main>block</main>的用法与<main>include</main>的类似,不过原理是相反的<br>
           include用于在编辑的pug中引用模版pug<br>
@@ -143,7 +143,7 @@
           block同样也是在编辑文档引用模版文档<br>
           不同的是block是在模版文档基础上添加属于自己独特的部分,而未添加的部分
           将直接引用模版
-      basecode(type="xml")
+      base-code(type="xml")
         slot.
           --layout.pug
           &lt!DOCTYPE html&gt
@@ -172,7 +172,7 @@
               &ltp&gt改变的值&lt/p&gt
             &lt/body&gt
           &lt/html&gt
-      basetext
+      base-text
         slot.
           用<main>extends</main>引用模版,<main>block</main>进行选择性的更改<br>
           需要更改时在对应处加上block和该位置对应的名称即可修改<br>
@@ -183,28 +183,8 @@
 
 <script>
 
-// 代码高亮
-import Highlight from 'highlight.js'
-
-// 主标题组件
-import Basecaption from '../public/Basecaption'
-
-// 标题组件
-import Basetitle from '../public/Basetitle'
-
-// 小标题组件
-import Smalltitle from '../public/Smalltitle'
-
-// 描述组件
-import Basetext from '../public/Basetext'
-
-// 代码组件
-import Basecode from '../public/Basecode'
-
 export default {
   mounted() {
-    // 高亮代码
-    Highlight.initHighlighting()
 
     // 改变重复的id值
     var $ids = document.querySelectorAll('[id]')
@@ -222,8 +202,7 @@ export default {
         }
       }
     }
-  },
-  components: { Basecaption, Basetitle, Basetext, Basecode, Smalltitle }
+  }
 }
 </script>
 

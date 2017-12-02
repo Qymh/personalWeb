@@ -1,15 +1,15 @@
 <template lang="pug">
   .limit.oa
     .article.col100
-      basecaption
+      base-caption
         span(slot="base") vee-validate学习笔记
-      basetitle(title="官方提供的验证Api")
-      basetext
+      base-title(title="官方提供的验证Api")
+      base-text
         slot.
           <main>vee-validate</main>用于表单的验证,如数字、英文、邮箱、链接等,
           也可以自己写其他的专属验证<br>
           下面的代码叙述了常用的由官方提供的验证
-      basecode(type="xml")
+      base-code(type="xml")
         slot.
           //- 第一个验证，验证名字是否为英文且长度不低于4
           
@@ -54,13 +54,13 @@
           &ltspan v-show= "errors.has('url')"&gt
             网址不正确
           &lt/span&gt
-      basetext
+      base-text
         slot.
           上面的第一个验证用了一个<main>data-vv-delay</main>用于延迟验证,时间为毫秒<br>
           上面的第二个验证用了一个<main>data-vv-scope</main>用于避免重复验证,加一个特殊的标记,
           同时对应的api会有稍微的不同<br>
-      basetitle(title="官方提供的状态Api")
-      basetext
+      base-title(title="官方提供的状态Api")
+      base-text
         slot.
           <main>touched</main>表已经聚焦并失焦一次<br>
           <main>untouched</main>表没有触碰<br>
@@ -68,7 +68,7 @@
           <main>invalid</main>表验证过一次且失败<br>
           <main>pristine</main>表没有接触过<br>
           <main>dirty</main>表修改过<br>
-      basecode(type="xml")
+      base-code(type="xml")
         slot.
           &ltinput v-validate= "'required|email'"&gt
           &ltspan v-show= "fields.email&&fields.touched"&gttouched&lt/span&gt
@@ -77,8 +77,8 @@
           &ltspan v-show= "fields.email&&fields.invalid"&gtinvalid&lt/span&gt
           &ltspan v-show= "fields.email&&fields.pristine"&gtpristine&lt/span&gt
           &ltspan v-show= "fields.email&&fields.dirty"&gtdirty&lt/span&gt
-      basetitle(title="js验证api")
-      basecode(type="xml")
+      base-title(title="js验证api")
+      base-code(type="xml")
         slot.
           &ltform @submit.prevent= "check"&gt
             &ltinput name= "email" v-validate= "'required|email'"&gt
@@ -92,10 +92,10 @@
 
             })
           }
-      basetext
+      base-text
         slot.
           当一个表单验证成功时,用上述api可以进行提交,我们也可以用js写特殊和更完美的验证
-      basecode
+      base-code
         slot.
           import { Validator } from 'vee-validate'
 
@@ -120,28 +120,9 @@
 
 <script>
 
-// 代码高亮
-import Highlight from 'highlight.js'
-
-// 主标题组件
-import Basecaption from '../public/Basecaption'
-
-// 标题组件
-import Basetitle from '../public/Basetitle'
-
-// 小标题组件
-import Smalltitle from '../public/Smalltitle'
-
-// 描述组件
-import Basetext from '../public/Basetext'
-
-// 代码组件
-import Basecode from '../public/Basecode'
 
 export default {
   mounted() {
-    // 高亮代码
-    Highlight.initHighlighting()
 
     // 改变重复的id值
     var $ids=document.querySelectorAll('[id]')
@@ -159,8 +140,7 @@ export default {
         }
       }
     }
-  },
-  components: { Basecaption, Basetitle, Basetext, Basecode,Smalltitle}
+  }
 }
 </script>
 

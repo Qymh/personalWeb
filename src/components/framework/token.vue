@@ -1,32 +1,32 @@
 <template lang="pug">
   .limit.oa
     .article.col100
-      basecaption
+      base-caption
         span(slot="base") Vue+Node实现前后端token认证
-      basetitle(title="后端")
-      smalltitle(title="依赖")
-      basetext
+      base-title(title="后端")
+      small-title(title="依赖")
+      base-text
         slot.
           首先介绍下node中需要用到的依赖<br>
           <main>body-parser</main>用于接受发送来的数据<br>
           <main>express</main>提供更高层的http Api<br>
           <main>jsonwebtoken</main>提供token生成<br>
           <main>mongoose</main>实现数据管理<br>
-      baseimg(src="../../../static/images/token/token1.png" width="40")
-      smalltitle(title="项目结构")
-      basetext
+      base-img(src="../../../static/images/token/token1.png" width="40")
+      small-title(title="项目结构")
+      base-text
         slot.
           下面是Node后端的项目结构<br>
           <main>lib</main>文件用于储存模版
           <main>routes</main>文件管理路由事件
-      baseimg(src="../../../static/images/token/token2.png")
-      smalltitle(title="模型")
-      basetext
+      base-img(src="../../../static/images/token/token2.png")
+      small-title(title="模型")
+      base-text
         slot.
           首先介绍的是<main>lib\User.js</main><br>
           模版中包含了用户的事件函数方法,如用户创建,用户登录,用户检查,用户token生成等<br>
           先从构建用户的数据依赖开始<br>
-      basecode(type="javascript")
+      base-code(type="javascript")
         slot.
           const mongoose=require('mongoose') // 引用mongoose
           const jwt=require('jsonwebtoken') // token注册工具
@@ -52,12 +52,12 @@
           }
 
           module.exports=User
-      smalltitle(title="注册模型")
-      basetext
+      small-title(title="注册模型")
+      base-text
         slot.
           上述代码生成了用户模型,可以看出需要保存的有三个数据,名字,密码,token<br>
           下一步我们将创建用户注册的方法,我们将这个函数层层分离,分为<main>四个函数</main><br>
-      basecode(type="javascript")
+      base-code(type="javascript")
         slot.
           // 创建用户
           User.prototype.create=function(fn){
@@ -107,7 +107,7 @@
             let token=jwt.sign({name:name},SECRET)
             fn(null,token)
           }
-      basetext
+      base-text
         slot.
           下面分析这4个函数的作用<br>
           1.<main>User.prototype.create</main>此函数用于创建用户<br>
@@ -124,12 +124,12 @@
           函数4执行注册token,并返回函数二传来的回调函数的第二参数为token值<br>
           此时,函数3,4执行完毕,函数2中执行检测传来的回调函数是false,还是token<br>
           是token便执行注册,是false,则返回名字已存在<br>
-      smalltitle(title="登录模型")
-      basetext
+      small-title(title="登录模型")
+      base-text
         slot.
           接着创建登录模型,登录模型有三个参数,名字,密码,回调函数<br>
           通过<main>UserModel.findOne</main>查找用户密码是否符合要求,返回结果<br>
-      basecode(type="javascript")
+      base-code(type="javascript")
         slot.
           // 登录
           User.prototype.authenticate=(name,pass,fn)=>{
@@ -138,11 +138,11 @@
               fn(null,result)
             })
           }
-      smalltitle(title="用户数据获取模型")
-      basetext
+      small-title(title="用户数据获取模型")
+      base-text
         slot.
           当用户登录成功后,如果要获取数据,可以通过<main>token</main>验证用户,成功则返回唯一数据
-      basecode(type="javascript")
+      base-code(type="javascript")
         slot.
           // 通过token搜索用户
           User.SearchByToken=(token,fn)=>{
@@ -151,11 +151,11 @@
               return fn(null,result)
             })
           }
-      smalltitle(title="注册路由")
-      basetext
+      small-title(title="注册路由")
+      base-text
         slot.
           在注册路由<main>routes/user.js</main>中获取用户输入的帐号和密码并执行刚才写到的用户注册模版<br>
-      basecode(type="javascript")
+      base-code(type="javascript")
         slot.
           const User=require('../lib/User') // 用户模版
 
@@ -184,11 +184,11 @@
               }
             })
           }
-      smalltitle(title="登录路由")
-      basetext
+      small-title(title="登录路由")
+      base-text
         slot.
           登录路由与注册路由类似
-      basecode
+      base-code
         slot.
           exports.login=(req,res,next)=>{
             let data=req.body // 数据
@@ -214,11 +214,11 @@
               }
             })
           }
-      smalltitle(title="用户数据获取路由")
-      basetext
+      small-title(title="用户数据获取路由")
+      base-text
         slot.
           我们现在写<main>routes/user.js</main>通过接受发送来的头部信息获取token,并通过token找到对应的用户
-      basecode(type="javascript")
+      base-code(type="javascript")
         slot.
           const User=require('../lib/User') // 用户模版
 
@@ -228,12 +228,12 @@
               res.json(result.name) // 返回前端用户的姓名
             })
           }
-      smalltitle(title="app.js")
-      basetext
+      small-title(title="app.js")
+      base-text
         slot.
           现在后端的路由和模版都完成了,下一步可以完成<main>app.js</main>,里面包括了开发环境下测试的跨域环境,
           并且引用我们需要的依赖
-      basecode(type="javascript")
+      base-code(type="javascript")
         slot.
           const express=require('express')
           const bodyParser=require('body-parser')
@@ -259,25 +259,25 @@
           app.listen(port,domain,()=>{
             console.log(`server is listening ${domain}:${port}`)
           })
-      smalltitle(title="运行")
-      basetext
+      small-title(title="运行")
+      base-text
         slot.
           最后运行我们的Node程序,<main>node app</main>
-      basetitle(title="前端")
-      smalltitle(title="项目结构")
-      basetext
+      base-title(title="前端")
+      small-title(title="项目结构")
+      base-text
         slot.
           前端用的是<main>vue2.x+webpack3.x</main>,模版引擎用的是<main>pug</main>,
           表单的认证引入了<main>vee-validate</main>,异步获取数据引用的是<main>axios</main>,
           也可以用<main>vue-resource</main>,两者原理是一样的,关于vue和webpack,
           我的文件位置和官方的<main>vue-cli</main>不一样,官方把<main>js style</main>
           放在了<main>assets</main>里面,不过原理是一样的,只需要更改对应的内容就行
-      baseimg(src="../../../static/images/token/token3.png")
-      smalltitle(title="注册")
-      basetext
+      base-img(src="../../../static/images/token/token3.png")
+      small-title(title="注册")
+      base-text
         slot.
           我们在<main>js/auth.js</main>中完成注册的函数方法
-      basecode
+      base-code
         slot.
           const SERVER_URL='http://127.0.0.1:8080/'
           const REGISTER_URL=SERVER_URL+'register'
@@ -315,14 +315,14 @@
                 context[message]='请求错误,稍后重试'
               })
             },
-      basetext
+      base-text
         slot.
           上述代码代表的是注册,我们在<main>components/register.vue</main>
           中通过<main>import auth from '../js/auth'</main>引用,
           通过<main>auth.register调用这个方法</main>,下面我们写<main>components/register.vue</main><br>
           首先是template,页面提供一个常规的表单认证
-      baseimg(src="../../../static/images/token/token4.png" width="80")
-      basecode
+      base-img(src="../../../static/images/token/token4.png" width="80")
+      base-code
         slot.
           &lttemplate lang="pug"&gt
             .registerBox
@@ -361,11 +361,11 @@
                   @click="rigister"
                 ) 提交
           &lt/template&gt
-      basetext
+      base-text
         slot.
           模版中通过<main>v-model</main>获取用户输入的用户名和密码,通过<main>@click="register"</main>
           提交用户的输入,下面我们完成register.vue中的数据与逻辑
-      basecode
+      base-code
         slot.
           &ltscript&gt
 
@@ -406,11 +406,11 @@
               }
             }
           &lt/script&gt
-      smalltitle(title="登录")
-      basetext
+      small-title(title="登录")
+      base-text
         slot.
           注册组件便完成了,下一步在<main>auth.js</main>中增加登录函数
-      basecode
+      base-code
         slot.
           /**
           * 登录函数
@@ -435,13 +435,13 @@
               context[message]='请求错误,稍后重试'
             })
           },
-      basetext
+      base-text
         slot.
           下一步完成<main>components/login.vue</main>的登录组件<br>
           登录组件与注册组件的模版和数据逻辑是几乎一样的,模版都是一个表单改一下名字<br>
           数据都是用户名、密码、错误选项,逻辑都是通过之前写好的auth进行对应的提交
-      baseimg(src="../../../static/images/token/token5.png" width="80")
-      basecode
+      base-img(src="../../../static/images/token/token5.png" width="80")
+      base-code
         slot.
           &lttemplate lang="pug"&gt
             .loginBox
@@ -480,7 +480,7 @@
                   @click="login"
                 ) 提交
           &lt/template&gt
-      basecode
+      base-code
         slot.
           &ltscript&gt
             import Vue from 'vue'
@@ -519,13 +519,13 @@
               }
             }
           &lt/script&gt
-      smalltitle(title="用户数据获取")
-      basetext
+      small-title(title="用户数据获取")
+      base-text
         slot.
           注册登录都完成了,现在需要确定用户是否登录并且在下次登录的时候可以不用再次登录就可以获取自己的数据<br>
           现在我们完成token检查(用户是否登录的检查),并完成注销登录和用户在登录下的数据获取<br>
           首先在<main>auth.js</main>中增加获取头部token,登录检查,注销三个功能
-      basecode
+      base-code
         slot.
           /**
           * 获取头部
@@ -560,16 +560,16 @@
             }
             window.location.reload()
           }
-      basetext
+      base-text
         slot.
           完成了auth函数方法,现在开始完善<main>components/home.vue</main>,这个页面代表了用户的主页<br>
-      basecode
+      base-code
         slot.
           &lttemplate lang="pug"&gt
             .test userName:{{userName}}
               .btn-small(v-show="userName" @click="clearUser") 注销
           &lt/template&gt
-      basecode
+      base-code
         slot.
           &ltscript&gt
             import auth from '../js/auth'
@@ -593,11 +593,11 @@
               }
             }
           &lt/script&gt
-      basetext
+      base-text
         slot.
           当用户没有登陆访问自己的主页的时候常理应该让用户跳转到登陆页面,我们在<main>App.vue</main>中完善这个功能<br>
           在创建前检查是否有token,如果没有则跳转到登陆,如果有则把token保存到data中
-      basecode
+      base-code
         slot.
           &ltscript&gt
 
@@ -620,11 +620,11 @@
               }
             }
           &lt/script&gt
-      smalltitle(title="路由")
-      basetext
+      small-title(title="路由")
+      base-text
         slot.
           最后是完善<main>index.js</main>并写入路由管理<main>router.js</main>,这里运用了懒加载的方法加载组件
-      basecode
+      base-code
         slot.
           import Vue from 'vue'
           import Router from 'vue-router'
@@ -651,7 +651,7 @@
               }
             ]
           })
-      basecode
+      base-code
         slot.
           import Vue from 'vue'
           import App from './App.vue'
@@ -661,8 +661,8 @@
             router,
             render:h=>h(App)
           }).$mount('#app')
-      smalltitle(title="运行")
-      basetext
+      small-title(title="运行")
+      base-text
         slot.
           通过指令<main>npm run dev</main>运行代码
       .h100
@@ -670,41 +670,8 @@
 
 <script>
 
-// 代码高亮
-import Highlight from 'highlight.js'
-
-// 主标题组件
-import Basecaption from '../public/Basecaption'
-
-// 标题组件
-import Basetitle from '../public/Basetitle'
-
-// 小标题组件
-import Smalltitle from '../public/Smalltitle'
-
-// 描述组件
-import Basetext from '../public/Basetext'
-
-// 代码组件
-import Basecode from '../public/Basecode'
-
-// 图像组件
-import Baseimg from '../public/Baseimg'
-
 export default {
   mounted() {
-    // 高亮代码
-    Highlight.initHighlighting()
-
-    // // 视口高度
-    // const baseHeight=document.documentElement.clientHeight||
-    // document.body.clientHeight
-
-    // var $limit=document.getElementsByClassName('limit')[0]
-    // var $nav=document.querySelectorAll('.navMobile')[0]
-
-    // var navHeight=$nav.clientHeight
-    // $limit.style.height=baseHeight-navHeight+'px'
 
     // 改变重复的id值
     var $ids=document.querySelectorAll('[id]')
@@ -722,8 +689,7 @@ export default {
         }
       }
     }
-  },
-  components: { Basecaption, Basetitle, Basetext, Basecode,Smalltitle,Baseimg}
+  }
 }
 </script>
 
