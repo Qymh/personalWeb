@@ -21,7 +21,7 @@ Vue.component('BaseText',()=>import('./components/public/BaseText.vue'))
 // 标题
 Vue.component('BaseTitle',()=>import('./components/public/BaseTitle.vue'))
 // 小标题
-Vue.component('SamllTitle',()=>import('./components/public/SmallTitle.vue'))
+Vue.component('SmallTitle',()=>import('./components/public/SmallTitle.vue'))
 
 new Vue({
   el: '#app',
