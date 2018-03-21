@@ -1,0 +1,328 @@
+@import '_color';
+
+// 公共的循环变量
+@for $i from 0 through 10{
+  // 透明度
+  .opacity#{$i}{
+    opacity: $i * 0.1;
+  }
+}
+
+// 公共的循环变量
+@for $i from 0 through 20{
+  // 宽度百分比
+  .col#{$i * 5}{
+    width: $i * 5% !important;
+  }
+
+  // 高度百分比
+  .row#{$i * 5}{
+    height: $i * 5% !important;
+  }
+
+  // z-index
+  .z#{$i * 1}{
+    z-index: $i;
+  }
+}
+
+// height
+
+.ha{
+  height: auto !important;
+}
+
+// word-break
+.wbb{
+  word-break: break-all;
+}
+
+// 颜色
+
+.colorSky{
+  color: $sky !important;
+}
+
+.colorPink{
+  color: $pink !important;
+}
+
+.colorBlack{
+  color:$blank !important;
+}
+
+.colorOrange{
+  color:$orange !important;
+}
+
+.colorLightOrange{
+  color:$lightOrange !important;
+}
+
+.colorRed{
+  color: $red !important;
+}
+
+.colorWhite{
+  color: $white !important;
+}
+
+.colorGreen{
+  color: $green !important;
+}
+
+.colorLine{
+  color:$line !important;
+}
+
+.colorGrey{
+  color:$lighterGrey !important;
+}
+
+.colorText{
+  color:#8e959a !important;
+}
+
+.colorLightRed{
+  color: #F7E5E3 !important;
+}
+
+.colorPurple{
+  color:$purple !important;
+}
+
+// 背景颜色
+
+.bkSky{
+  background-color: $sky;
+}
+
+.bkWhite{
+  background-color: $white;
+}
+
+.bkGreen{
+  background-color: $green;
+}
+
+.bkGrey{
+  background-color: #dedede;
+}
+
+.bkLightGrey{
+  background-color: #eee;
+}
+
+.bkOrange{
+  background-color: $orange !important;
+}
+
+.bkLightOrange{
+  background-color:$lightOrange !important;
+}
+
+.bkRed{
+  background-color:$red;
+}
+
+.bkLightRed{
+  background-color: #F7E5E3;
+}
+
+.bkBlack{
+  background-color: $blank !important;
+}
+
+.bkPurple{
+  background-color: $purple !important;
+}
+
+// 水平
+
+.tl{
+  text-align: left;
+}
+
+.tc{
+  text-align: center;
+}
+
+.tr{
+  text-align: right;
+}
+
+// 浮动
+
+.fl{
+  float: left;
+}
+
+.fr{
+  float: right;
+}
+
+// 指针
+
+.point{
+  cursor: pointer;
+}
+
+.text{
+  cursor: text;
+}
+
+// display
+
+.dib{
+  display: inline-block;
+}
+
+.di{
+  display: inline;
+}
+
+.db{
+  display: block;
+}
+
+.dn{
+  display: none;
+}
+
+// font-weight
+
+.fb{
+  font-weight: bold;
+}
+
+// vertical-align
+
+.vc{
+  vertical-align:middle !important;
+}
+
+.vb{
+  vertical-align: bottom !important;
+}
+
+.vs{
+  vertical-align: sub !important;
+}
+
+// overflow
+
+.oa{
+  overflow: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+.oh{
+  overflow: hidden;
+}
+
+.ov{
+  overflow: visible;
+}
+
+.os{
+  overflow: scroll;
+}
+
+// text-overflow
+
+.te{
+  text-overflow:ellipsis;
+}
+
+// position
+
+.pa{
+  position: absolute
+}
+
+.pr{
+  position: relative;
+}
+
+.pf{
+  position: fixed;
+}
+
+.ps{
+  position: sticky;
+}
+
+// border
+
+.borderGrey{
+  border: 1px solid $line;
+}
+
+.borderOrange{
+  border: 1px solid $orange;
+}
+
+.borderDarkGery{
+  border: 1px solid #d6d7dc;
+}
+
+.borderMoreDarkGrey{
+  border: 1px solid #666;
+}
+
+.borderBottom{
+  border-bottom:solid 1px #d6d7dc;
+}
+
+.borderBottomDark{
+  border-bottom: 1px solid #666;
+}
+
+.borderBottomOrange{
+  border-bottom: 1px solid $orange;
+}
+
+.borderTop{
+  border-top:solid 1px #d6d7dc;
+}
+
+.borderTopDark{
+  border-top: 1px solid #666;
+}
+
+.borderNone{
+  border:0;
+}
+
+.borderSky{
+  border:1px solid $sky;
+}
+
+// border-radius
+
+.br50{
+  border-radius:50%;
+}
+
+// text-decoration
+
+.tdline{
+  text-decoration:line-through; 
+}
+
+.tdnone{
+  text-decoration: none;
+}
+
+// 清除浮动
+.clearFix{
+  zoom:1;
+  &:after{
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+  }
+}
+

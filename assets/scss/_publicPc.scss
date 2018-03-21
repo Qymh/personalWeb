@@ -1,0 +1,73 @@
+@import './_color';
+@import './_publicBoth';
+
+// 10次循环
+@for $i from 0 through 20{
+  // margin
+  .l#{$i}{
+    left:$i * 0.1rem !important
+  }
+  .r#{$i}{
+    right:$i * 0.1rem !important
+  }
+  .t#{$i}{
+    top:$i * 0.1rem !important
+  }
+  .b#{$i}{
+    bottom:$i * 0.1rem !important
+  }
+  .mt#{$i}{
+    margin-top:$i * 0.1rem !important;
+  }
+  .mr#{$i}{
+    margin-right:$i * 0.1rem !important;
+  }
+  .mb#{$i}{
+    margin-bottom:$i * 0.1rem !important;
+  }
+  .ml#{$i}{
+    margin-left:$i * 0.1rem !important;
+  }
+
+  // padding
+  .pt#{$i}{
+    padding-top:$i * 0.1rem !important;
+  }
+  .pr#{$i}{
+    padding-right:$i * 0.1rem !important;
+  }
+  .pb#{$i}{
+    padding-bottom:$i * 0.1rem !important;
+  }
+  .pl#{$i}{
+    padding-left:$i * 0.1rem !important;
+  }
+
+  // text-indent
+  .ti#{$i}{
+    text-indent: $i * 0.1rem !important;
+  }
+
+  // border-radius
+  .br#{$i}{
+    border-radius: $i * 0.1rem !important;
+  }
+
+  // 字体
+  .font#{$i + 10}{
+    font-size: ($i + 10) * 1px !important;
+  }
+}
+
+// 100次循环
+@for $i from 0 through 100{
+  .h#{$i}{
+    height:$i * 0.1rem !important;
+  }
+  .w#{$i}{
+    width:$i * 0.1rem !important;
+  }
+  .lh#{$i}{
+    line-height:$i * 0.1rem !important;
+  }
+}

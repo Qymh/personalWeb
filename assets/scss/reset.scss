@@ -1,0 +1,38 @@
+@import '_resetInner';
+@import '_fonts';
+
+html{
+  box-sizing: border-box;
+  color: #333;
+  font-family: 'Helvetica Neue',Tahoma,Arial,PingFangSC-Regular,'Hiragino Sans GB','Microsoft Yahei',sans-serif;
+  line-height: 1.2;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+a{
+  color:#333;
+}
+
+// 移动端
+@media(max-width:1000px){
+  body{
+    font-size: 14px;
+  }
+}
+
+// pc端
+@media(min-width:1000px){
+  body{
+    font-size: 15px;
+  }
+}

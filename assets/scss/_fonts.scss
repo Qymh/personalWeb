@@ -1,0 +1,52 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?yem8kq');
+  src:  url('../fonts/icomoon.eot?yem8kq#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?yem8kq') format('truetype'),
+    url('../fonts/icomoon.woff?yem8kq') format('woff'),
+    url('../fonts/icomoon.svg?yem8kq#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-nav:before {
+  content: "\e900";
+}
+.icon-basetitle:before {
+  content: "\e901";
+}
+.icon-caption:before {
+  content: "\e902";
+}
+.icon-category:before {
+  content: "\e903";
+}
+.icon-combat:before {
+  content: "\e904";
+}
+.icon-smalltitle:before {
+  content: "\e905";
+}
+.icon-time:before {
+  content: "\e906";
+}
+.icon-update:before {
+  content: "\e907";
+}
+.icon-warn:before {
+  content: "\e908";
+}

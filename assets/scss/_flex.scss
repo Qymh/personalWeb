@@ -1,0 +1,44 @@
+.flex{
+  display: flex;
+}
+
+.dirLeft{
+  flex-direction: row;
+}
+
+.dirRight{
+  flex-direction: row-reverse;
+}
+
+.dirTop{
+  flex-direction: column;
+}
+
+.main{
+  justify-content: center;
+}
+
+.mainRight{
+  justify-content: flex-end;
+}
+
+.cross{
+  align-items: center;
+}
+
+.flexWrap{
+  flex-wrap: wrap;
+}
+
+@for $i from 1 through 5{
+  .flex#{$i}{
+    -webkit-box-flex: $i;
+    -webkit-flex-grow: $i;
+    -ms-flex-positive: $i;
+    flex-grow: $i;
+    -webkit-flex-shrink: $i;
+    -ms-flex-negative: $i;
+    flex-shrink: $i
+  }
+} 
+
