@@ -71,6 +71,7 @@ export default {
         width: 65%;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         &_title{
           font-size: 25px;
           font-weight: bold;

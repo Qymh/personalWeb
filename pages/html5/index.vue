@@ -33,17 +33,3 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-  .header{
-    border-bottom: 1px solid #d6d7dc;
-    position: fixed;
-    width: 100%;
-    background-color: #ffffff;
-    &_navTop{
-      width: 40%;
-    }
-  }
-</style>
-
-
-
