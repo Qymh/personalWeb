@@ -3,7 +3,7 @@
     i.icon-basetitle
     a.baseTitle_text(
       :id="title"
-      :href="title") {{title}}
+      :href="'#'+title") {{title}}
 </template>
 
 <script>
@@ -29,8 +29,9 @@ export default {
       color: #35caef;
     }
     &_text{
-      font-size: 30px;
+      font-size: 35px;
       margin-left: 20px;
+      font-weight: bold;
     }
   }
 </style>

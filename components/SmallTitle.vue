@@ -3,7 +3,7 @@
     i.icon-smalltitle
     a.smallTitle_text(
       :id="title"
-      :href="title") {{title}}
+      :href="'#'+title") {{title}}
 </template>
 
 <script>
@@ -21,8 +21,8 @@ export default {
 <style lang="scss" scoped>
   .smallTitle{
     margin-top: 30px;
-    margin-left:100px;
-    padding-bottom: 30px;
+    margin-left:80px;
+    padding-bottom: 10px;
     display: flex;
     align-items: center;
     >i{
@@ -30,8 +30,9 @@ export default {
       color: #35caef;
     }
     &_text{
-      font-size: 20px;
+      font-size: 25px;
       margin-left: 10px;
+      font-weight: bold;
     }
   }
 </style>
