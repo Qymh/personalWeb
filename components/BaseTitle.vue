@@ -1,7 +1,7 @@
 <template lang="pug">
   .baseTitle
     i.icon-basetitle
-    a.baseTitle_text(
+    a.baseTitle_text.titles(
       :id="title"
       :href="'#'+title") {{title}}
 </template>
@@ -14,7 +14,7 @@ export default {
       type:String,
       default:''
     }
-  }
+  },
 }
 </script>
 

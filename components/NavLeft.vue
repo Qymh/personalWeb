@@ -4,14 +4,17 @@
       v-for="(nav,index) in navs"
       :key="index")
       //- 大标题
-      a.navLeft_titleBox_baseTitle(:href="nav.baseTitleHref")
+      a.navLeft_titleBox_baseTitle(
+        @click="baseTitleClick(nav)"
+        :href="nav.baseTitleHref")
         i.icon-basetitle
         span.navLeft_titleBox_baseTitle_name {{nav.baseTitleName}}
       //- 小标题
       a.navLeft_titleBox_smallTitle(
         v-for="(item,index) in nav.smallTitleArr"
         :key="index"
-        :href="item.smallTitleHref")
+        :href="item.smallTitleHref"
+        @click="smallTitleClick(item)")
         i.icon-smalltitle
         span.navLeft_titleBox_smallTitle_name {{item.smallTitleName}}
 </template>
@@ -22,7 +25,8 @@ export default {
   data () {
     return {
       navs:[],
-      timer:null  
+      timer:null,
+      nowHash:''  
     }
   },
   watch: {
@@ -34,47 +38,43 @@ export default {
   methods: {
     // 构造标题
     generateTitles(){
-      // 大标题
-      let $baseTitle=Array.from(document.getElementsByClassName('baseTitle_text'))
-      // 小标题
-      let $smallTitle=Array.from(document.getElementsByClassName('smallTitle_text'))
-      let $baseTitleId=[]
-      let $smallTitleId=[]
+      let $titles=Array.from(document.getElementsByClassName('titles'))
       let arr=[]
+      let baseTitleIds=[]
+      let smallTitleIds=[]
+      let i=-1
 
-      $baseTitle.forEach(p=>{
-        let id=p.id
-        if($baseTitleId.includes(id)){
-          p.id+=1
-        }
-      })
+      $titles.forEach((p,index)=>{
+        // 判断是不是大标题
+        if(Array.from(p.classList).includes('baseTitle_text')){
+          // 如果存在重复的id名字则改变
+          if(baseTitleIds.includes(p.id)){
+            p.id+='1'
+            p.href+='1'
+          }
+          baseTitleIds.push(p.id)
 
-      $smallTitle.forEach(p=>{
-        let id=p.id
-        console.log(id)
-        if($smallTitleId.includes(id)){
-          p.id+=1
-          console.log(p)
-        }
-      })
-
-      // 构造导航数组
-      for(let i in $baseTitle){
-        let $baseTitleItem=$baseTitle[i]
-        arr.push({
-          baseTitleName:$baseTitleItem.innerHTML,
-          baseTitleHref:$baseTitleItem.href,
-          smallTitleArr:[]
-        })
-        for(let j in $smallTitle){
-          let $smallTitleItem=$smallTitle[j]
-          arr[i].smallTitleArr.push({
-            smallTitleName:$smallTitleItem.innerHTML,
-            smallTitleHref:$smallTitleItem.href
+          arr.push({
+            baseTitleName:p.innerHTML,
+            baseTitleHref:p.href,
+            smallTitleArr:[]
           })
+          i++
         }
-      }
 
+        // 如果存在重复的id名字则改变
+        if(smallTitleIds.includes(p.id)){
+          p.id+='1'
+          p.href+='1'
+        }
+        smallTitleIds.push(p.id)
+
+        arr[i].smallTitleArr.push({
+          smallTitleName:p.innerHTML,
+          smallTitleHref:p.href
+        })
+      })
+      
       this.navs=arr
     },
     // 监听路由hash改变
@@ -110,6 +110,14 @@ export default {
           }
         },10)
       })
+    },
+    // 点击大标题
+    baseTitleClick(nav){
+
+    },
+    // 点击小标题
+    smallTitleClick(item){
+      
     }
   }
 }
@@ -150,6 +158,10 @@ export default {
     }
   }
   i{
+    color: deepskyblue;
+  }
+
+  .colorSky{
     color: deepskyblue;
   }
 </style>

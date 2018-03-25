@@ -1,7 +1,7 @@
 <template lang="pug">
   .smallTitle
     i.icon-smalltitle
-    a.smallTitle_text(
+    a.smallTitle_text.titles(
       :id="title"
       :href="'#'+title") {{title}}
 </template>
