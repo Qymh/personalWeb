@@ -1,5 +1,7 @@
 <template lang="pug">
-  .baseImg
+  a.baseImg(
+    target="_blank"
+    :href="src")
     img(
       :src="src"
       :style="{width:width+'%'}")
@@ -22,12 +24,27 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .baseImg{
-    padding-top: 20px;
-    margin-left: 100px;
-    margin-bottom: 30px;
-    margin-top: 30px;
-    width: 90%;
+  // pc
+  @media(min-width:1000px){
+    .baseImg{
+      display: inline-block;
+      padding-top: 20px;
+      margin-left: 100px;
+      margin-bottom: 30px;
+      margin-top: 30px;
+      width: 90%;
+    }
+  }
+  // 移动
+  @media(max-width:1000px){
+    .baseImg{
+      display: inline-block;
+      margin-top: 20px;
+      width: 100%;
+      >img{
+        width:100% !important;
+      }
+    }
   }
 </style>
 

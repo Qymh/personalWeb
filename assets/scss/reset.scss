@@ -6,17 +6,6 @@ a{
   color:#333;
 }
 
-main{
-  display: inline-block;
-  font-size: 14px;
-  height: 30px;
-  line-height: 30px;
-  margin: 0 5px;
-  padding: 0 20px;
-  color: deeppink;
-  background-color: #F8F8F8;
-}
-
 // 移动端
 @media(max-width:1000px){
   html{
@@ -38,6 +27,24 @@ main{
   body{
     font-size: 14px;
   }
+  .header_navTop{
+    width: 100%;
+  }
+  .articleMain{
+    margin-top: 80px;
+    padding:0 20px;
+    overflow: hidden;
+  }
+  main{
+    display: inline-block;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 5px;
+    padding: 0 15px;
+    color: deeppink;
+    background-color: #F8F8F8;
+  }
 }
 
 // pc端
@@ -45,21 +52,33 @@ main{
   body{
     font-size: 15px;
   }
-  .header{
-    border-bottom: 1px solid #d6d7dc;
-    position: fixed;
-    width: 100%;
-    flex-grow: 0;
-    top: 0;
-    left: 0;
-    background-color: #ffffff;
-    &_navTop{
-      width: 40%;
-    }
+  .header_navTop{
+    width: 40%;
   }
   .articleMain{
     margin-left: 20%;
     margin-top: 80px;
     padding:40px 40px;
   }
+  main{
+    display: inline-block;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 5px;
+    padding: 0 20px;
+    color: deeppink;
+    background-color: #F8F8F8;
+  }
+}
+
+.header{
+  border-bottom: 1px solid #d6d7dc;
+  position: fixed;
+  width: 100%;
+  flex-grow: 0;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  z-index: 6;
 }

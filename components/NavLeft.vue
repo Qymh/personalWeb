@@ -113,7 +113,7 @@ export default {
     },
     // 点击大标题
     baseTitleClick(nav){
-
+      
     },
     // 点击小标题
     smallTitleClick(item){
@@ -124,6 +124,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+  // pc
+  @media(min-width:1000px){
+
+  }
+
+  // 移动
+  @media(max-width:1000px){
+    .navLeft{
+      display: none;
+    }
+  }
+
   .navLeft{
     position: fixed;
     width:20%;
@@ -138,6 +151,7 @@ export default {
         padding:8px 0;
         line-height: 20px;
         cursor: pointer;
+        display: inline-block;
         &_name{
           margin-left: 10px;
         }
@@ -157,6 +171,7 @@ export default {
       }
     }
   }
+
   i{
     color: deepskyblue;
   }

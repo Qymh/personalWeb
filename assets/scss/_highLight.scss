@@ -1,9 +1,22 @@
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding:25px 40px;
-  background: #F8F8F8;
+// pc
+@media(min-width:1000px){
+  .hljs {
+    display: block;
+    overflow-x: auto;
+    padding:25px 40px;
+    background: #F8F8F8;
+  }
 }
+// 移动端
+@media(max-width:1000px){
+  .hljs {
+    display: block;
+    overflow-x: scroll;
+    padding:20px 20px;
+    background: #F8F8F8;
+  }
+}
+
 
 .hljs,
 .hljs-subst {

@@ -15,5 +15,7 @@ module.exports = {
     {src:'assets/scss/reset.scss',lang:'scss'}
   ],
   // 加载线
-  loading:{color:'#35caef'}
+  loading:{color:'#35caef'},
+  // 缓存
+  cache:true
 }

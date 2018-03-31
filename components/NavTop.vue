@@ -33,10 +33,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .navTop{
-    height:80px;
-    display: flex;
-    flex-direction: row;
+  // pc
+  @media(min-width:1000px){
+    .navTop{
+      height:80px;
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  // 移动
+  @media(max-width:1000px){
+    .navTop{
+      height:60px;
+      display: flex;
+      flex-direction: row;
+    }
   }
   .nav{
     display: flex;
