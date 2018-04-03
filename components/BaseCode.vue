@@ -38,6 +38,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  // pc
   @media(min-width:1000px){
     .baseCode{
       padding-left:70px;
@@ -56,10 +57,11 @@ export default {
       }
     }
   }
+  // 移动
   @media(max-width:1000px){
     .baseCode{
-      padding-left:20px;
-      padding-right:20px;
+      padding-left:10px;
+      padding-right:10px;
       margin-bottom: 20px;
       margin-top: 20px;
       >pre{

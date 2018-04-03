@@ -27,6 +27,9 @@ module.exports = {
   performance: {
     prefetch: false
   },
+  render: {
+    resourceHints:false
+  },
   // 插件
   plugins:[
     {src:'~plugins/baidu.js',ssr:false}

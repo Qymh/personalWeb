@@ -1,39 +1,54 @@
 <template lang="pug">
   .navLeft
     .navLeft_titleBox(
-      v-for="(nav,index) in navs"
-      :key="index")
+      v-for="(nav,outerIndex) in navs"
+      :key="outerIndex")
       //- 大标题
       a.navLeft_titleBox_baseTitle(
-        @click="baseTitleClick(nav)"
         :href="nav.baseTitleHref")
         i.icon-basetitle
-        span.navLeft_titleBox_baseTitle_name {{nav.baseTitleName}}
+        span.navLeft_titleBox_baseTitle_name(
+          :class="outerIndex===currentBaseTitle?'colorSky':''") {{nav.baseTitleName}}
       //- 小标题
       a.navLeft_titleBox_smallTitle(
         v-for="(item,index) in nav.smallTitleArr"
         :key="index"
-        :href="item.smallTitleHref"
-        @click="smallTitleClick(item)")
+        :href="item.smallTitleHref")
         i.icon-smalltitle
-        span.navLeft_titleBox_smallTitle_name {{item.smallTitleName}}
+        span.navLeft_titleBox_smallTitle_name(
+          :class="index===currentSmallTitle&&outerIndex===currentBaseTitle?'colorSky':''") {{item.smallTitleName}}
 </template>
 
 <script>
+
+import throttle from 'lodash/throttle'
+
 export default {
   name:'NavLeft',
   data () {
     return {
       navs:[],
       timer:null,
-      nowHash:''  
+      // 当前的大标题索引
+      currentBaseTitle:0,
+      // 当前小标题索引
+      currentSmallTitle:0  
     }
   },
   watch: {
     '$route.fullPath':'hashChanged'
   },
   mounted () {
-    this.generateTitles()
+    this.$nextTick(()=>{
+      // 构造标题
+      this.generateTitles()
+      // 添加滚动事件
+      window.addEventListener('scroll',throttle(()=>this.scrolled(),100))
+      // 如果有hash则滚动到当前指定hash
+      if (this.$route.hash.length) {
+        this.scrollTo(this.$route.hash)
+      }
+    })
   },
   methods: {
     // 构造标题
@@ -55,6 +70,7 @@ export default {
           baseTitleIds.push(p.id)
 
           arr.push({
+            dom:p,
             baseTitleName:p.innerHTML,
             baseTitleHref:p.href,
             smallTitleArr:[]
@@ -62,19 +78,22 @@ export default {
           i++
         }
 
-        // 如果存在重复的id名字则改变
-        if(smallTitleIds.includes(p.id)){
-          p.id+='1'
-          p.href+='1'
+        if(Array.from(p.classList).includes('smallTitle_text')){
+          // 如果存在重复的id名字则改变
+          if(smallTitleIds.includes(p.id)){
+            p.id+='1'
+            p.href+='1'
+          }
+          smallTitleIds.push(p.id)
+  
+          arr[i].smallTitleArr.push({
+            dom:p,
+            smallTitleName:p.innerHTML,
+            smallTitleHref:p.href
+          })
         }
-        smallTitleIds.push(p.id)
-
-        arr[i].smallTitleArr.push({
-          smallTitleName:p.innerHTML,
-          smallTitleHref:p.href
-        })
       })
-      
+
       this.navs=arr
     },
     // 监听路由hash改变
@@ -111,13 +130,22 @@ export default {
         },10)
       })
     },
-    // 点击大标题
-    baseTitleClick(nav){
-      
-    },
-    // 点击小标题
-    smallTitleClick(item){
-      
+    // 滑动滚动
+    scrolled(){
+      let doc=document.documentElement
+      let top=(window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0)
+      let h=window.innerHeight||doc.clientHeight||document.body.clientHeight
+      let baseTop=130
+      this.navs.forEach((p,index)=>{
+        if(top+baseTop>p.dom.offsetTop){
+          this.currentBaseTitle=index
+        }
+        p.smallTitleArr.forEach((item,index)=>{
+          if(top+baseTop>item.dom.offsetTop){
+            this.currentSmallTitle=index
+          }
+        })
+      })
     }
   }
 }
